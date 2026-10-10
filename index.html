@@ -3,15 +3,1095 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AI 營養協作平台｜暖色美術版</title>
+<title>AI 營養協作平台｜ICOPE × MNA-SF × GLIM</title>
+<meta name="description" content="跨住院、社區、居家的高齡營養照護協作原型：ICOPE 營養初篩、MNA-SF、GLIM 診斷分級、追蹤任務與趨勢。">
 <style>
-:root{--bg:#fff8ee;--ink:#24313a;--muted:#716e67;--line:#eadcca;--panel:rgba(255,255,255,.9);--navy:#263b4d;--teal:#2f8b85;--sage:#e2f3ee;--coral:#de6f61;--gold:#d49a3a;--cream:#fffaf2;--shadow:0 22px 55px rgba(122,83,45,.12)}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 12% 10%,rgba(255,218,170,.55) 0 130px,transparent 132px),radial-gradient(circle at 86% 6%,rgba(226,243,238,.95) 0 180px,transparent 182px),linear-gradient(135deg,#fffaf3 0%,#fff2df 46%,#eef7f1 100%);color:var(--ink);font-family:"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif}body:before{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(45deg,rgba(212,154,58,.08) 25%,transparent 25%),linear-gradient(-45deg,rgba(47,139,133,.07) 25%,transparent 25%);background-size:32px 32px;background-position:0 0,16px 16px;mask-image:linear-gradient(180deg,rgba(0,0,0,.34),transparent 72%)}button,input,select,textarea{font:inherit}button{cursor:pointer}.shell{display:grid;grid-template-columns:280px minmax(0,1fr);min-height:100vh}.side{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:24px;padding:24px;background:radial-gradient(circle at 28px 72px,rgba(255,211,132,.38),transparent 130px),linear-gradient(180deg,#2a4051 0%,#223648 56%,#1d3142 100%);color:#fff;overflow:hidden}.side:after{content:"";position:absolute;right:-58px;bottom:84px;width:170px;height:170px;border:1px solid rgba(255,236,202,.28);border-radius:999px;box-shadow:-40px -90px 0 -52px rgba(255,236,202,.42),-86px 42px 0 -62px rgba(119,184,164,.45)}.brand{position:relative;z-index:1;display:flex;align-items:center;gap:12px}.mark{display:grid;place-items:center;width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#ffd982,#f6a06d);color:#102438;font-weight:900;box-shadow:0 10px 24px rgba(246,160,109,.28)}.brand span{display:block;margin-top:3px;color:rgba(255,255,255,.72);font-size:.84rem}.tabs{position:relative;z-index:1;display:grid;gap:8px}.tab{min-height:44px;border:1px solid transparent;border-radius:8px;background:transparent;color:rgba(255,255,255,.78);text-align:left;padding:10px 12px;transition:.16s}.tab.active,.tab:hover{background:rgba(255,255,255,.13);color:#fff;border-color:rgba(255,234,194,.34);transform:translateX(2px)}.sync{position:relative;z-index:1;margin-top:auto;border:1px solid rgba(255,234,194,.22);border-radius:8px;padding:14px;background:rgba(255,255,255,.1);line-height:1.6;color:rgba(255,255,255,.78);backdrop-filter:blur(14px)}main{padding:30px}.top{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:24px;padding:16px 18px;border:1px solid rgba(234,220,202,.72);border-radius:8px;background:rgba(255,255,255,.52);box-shadow:0 12px 28px rgba(122,83,45,.08);backdrop-filter:blur(14px)}.eyebrow{margin:0 0 6px;color:#b76a2f;font-weight:900;font-size:.76rem;text-transform:uppercase}h1,h2,h3,p{margin-top:0}h1{margin-bottom:0;font-size:clamp(1.55rem,3vw,2.35rem);line-height:1.18}h2{font-size:1.14rem}.btn,.primary,.chip,.danger,.mealbtn,.filebtn{border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.88);color:var(--ink);min-height:38px;padding:8px 13px;box-shadow:0 7px 18px rgba(122,83,45,.06)}.primary{background:linear-gradient(135deg,#d96f57,#d99a3a);border-color:#d16f4b;color:#fff;font-weight:900;box-shadow:0 12px 26px rgba(217,111,87,.26)}.danger{border-color:#f0bbb5;background:#fff4f2;color:#a33328;font-weight:800}.view{display:none}.view.active{display:block}.grid{display:grid;gap:16px}.cards{grid-template-columns:repeat(4,minmax(0,1fr))}.twocol{grid-template-columns:repeat(2,minmax(0,1fr))}.panel,.card{border:1px solid var(--line);border-radius:8px;background:var(--panel);box-shadow:var(--shadow);backdrop-filter:blur(18px)}.card{position:relative;overflow:hidden;padding:16px}.card:after{content:"";position:absolute;right:-28px;top:-28px;width:82px;height:82px;border-radius:999px;background:rgba(255,218,170,.55)}.card span{color:var(--muted);font-size:.88rem}.card strong{display:block;margin:6px 0 5px;color:#b85f45;font-size:1.9rem}.card p{margin:0;color:var(--muted)}.hero{position:relative;display:grid;grid-template-columns:minmax(0,.95fr) minmax(320px,1.05fr);overflow:hidden;border-color:rgba(231,202,164,.82);background:radial-gradient(circle at 15% 18%,rgba(255,219,162,.52),transparent 180px),linear-gradient(135deg,rgba(255,255,255,.94),rgba(255,247,233,.92))}.hero-copy{padding:32px}.hero-copy h2{font-size:clamp(1.42rem,2.7vw,2.35rem);color:#263b4d}.hero-copy p:not(.eyebrow){color:var(--muted);line-height:1.7}.art{min-height:310px;background:linear-gradient(135deg,#e8f6f6,#fff7ea);position:relative;overflow:hidden}.art:before{content:"";position:absolute;inset:42px;border-radius:18px;background:#fff;box-shadow:var(--shadow)}.art:after{content:"";position:absolute;left:76px;top:92px;width:330px;height:190px;border-radius:14px;background:linear-gradient(180deg,#fff,#edf7f1);box-shadow:0 18px 35px rgba(38,59,77,.12)}.art b{position:absolute;z-index:1;display:block;border-radius:999px}.art .l1{left:118px;top:128px;width:190px;height:14px;background:#263b4d}.art .l2{left:118px;top:170px;width:250px;height:14px;background:#9bd5cf}.art .l3{left:118px;top:216px;width:210px;height:14px;background:#5e956c}.art .dot{left:390px;top:224px;width:86px;height:86px;background:#de6f61;border-radius:50%}.head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:14px}.filters,.seg,.actions{display:flex;gap:8px;flex-wrap:wrap}.chip.active,.mealbtn.active{background:var(--sage);border-color:var(--teal);color:#236c68;font-weight:900}.workbench{display:grid;grid-template-columns:330px 1fr;gap:14px}.list,.stack{display:grid;gap:10px}.list{max-height:560px;overflow:auto}.casebtn{width:100%;text-align:left;border:1px solid var(--line);background:rgba(255,255,255,.88);border-radius:8px;padding:12px;box-shadow:0 8px 20px rgba(122,83,45,.05)}.casebtn.active{background:linear-gradient(135deg,#fff6e8,#e8f4ed);border-color:#d99a3a}.casebtn span{display:block;color:var(--muted);font-size:.88rem;margin-top:4px}.detail{background:linear-gradient(135deg,rgba(255,250,242,.94),rgba(238,247,241,.9));border:1px solid rgba(234,220,202,.72);border-radius:8px;padding:16px;min-height:420px}.detail-actions{display:flex;justify-content:flex-end;margin:-4px 0 14px}.badge{display:inline-flex;align-items:center;justify-content:center;min-width:72px;border-radius:99px;padding:7px 10px;font-weight:900}.high{background:#ffe3dc;color:#9e3f32}.medium{background:#fff1d8;color:#815615}.low{background:#e1f3e2;color:#326c42}.data{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.tile,.item,.empty{background:rgba(255,255,255,.86);border:1px solid var(--line);border-radius:8px;padding:12px;box-shadow:0 7px 16px rgba(122,83,45,.05)}.empty{border-style:dashed;color:var(--muted);line-height:1.6}.tile span,.item span,.item p{color:var(--muted);line-height:1.5}.tile strong{display:block;margin-top:5px}.item strong{display:block;margin-bottom:4px}.item p{margin:0}.item strong.row{display:flex;justify-content:space-between;gap:10px}.item strong.row span{font-size:.78rem;font-weight:600}.formgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.formgrid label{display:grid;gap:7px;color:var(--muted);font-size:.9rem}.formgrid input,.formgrid select,select,textarea{width:100%;min-height:38px;border:1px solid var(--line);border-radius:8px;padding:7px 10px;background:#fff;color:var(--ink)}.icope-fieldset{grid-column:1/-1;display:grid;gap:10px;margin:0;padding:12px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.88)}.icope-fieldset legend{padding:0 6px;font-weight:800}.icope-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 12px}.icope-options label{display:flex;align-items:center;gap:8px;color:var(--ink)}.icope-options input{width:auto;min-height:auto}.icope-count{color:#b76a2f;font-weight:900}.mealbox{min-height:190px;border:1px dashed #d4b98f;border-radius:8px;background:radial-gradient(circle at 30% 35%,rgba(255,214,149,.48),transparent 80px),linear-gradient(135deg,#fff9ef,#eaf5ed);display:grid;place-items:center;color:var(--muted);overflow:hidden}.mealbox img{width:100%;height:240px;object-fit:cover}.bar{display:grid;gap:5px}.bar div:first-child{display:flex;justify-content:space-between;color:var(--muted);font-size:.9rem}.track{height:10px;background:#f0e5d6;border-radius:99px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--gold))}canvas{width:100%;height:260px;border-radius:8px;background:linear-gradient(180deg,#fffdf8,#f5faf5)}.timeline{display:grid;gap:12px;margin:0;padding:0;list-style:none}.timeline li{position:relative;padding:12px 12px 12px 42px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.86)}.timeline li:before{content:counter(list-item);position:absolute;left:12px;top:13px;display:grid;place-items:center;width:22px;height:22px;border-radius:999px;background:var(--teal);color:#fff;font-weight:900}.toast{position:fixed;right:22px;bottom:22px;background:linear-gradient(135deg,#2a4051,#5b4a3b);color:#fff;border-radius:8px;padding:12px 14px;opacity:0;transform:translateY(10px);transition:.18s;max-width:420px;box-shadow:var(--shadow)}.toast.show{opacity:1;transform:none}@media(max-width:980px){.shell{grid-template-columns:1fr}.side{position:static;height:auto}.tabs{grid-template-columns:repeat(4,1fr)}.cards,.hero,.workbench,.twocol{grid-template-columns:1fr}.art{min-height:220px}}@media(max-width:720px){main,.side{padding:16px}.top,.head{flex-direction:column;align-items:stretch}.formgrid,.data,.icope-options{grid-template-columns:1fr}.tabs{grid-template-columns:1fr}}
+:root{--bg:#fff8ee;--ink:#24313a;--muted:#6b6862;--line:#eadcca;--panel:rgba(255,255,255,.92);--navy:#263b4d;--teal:#2f8b85;--sage:#e2f3ee;--coral:#de6f61;--gold:#d49a3a;--cream:#fffaf2;--shadow:0 22px 55px rgba(122,83,45,.12)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(circle at 12% 10%,rgba(255,218,170,.55) 0 130px,transparent 132px),radial-gradient(circle at 86% 6%,rgba(226,243,238,.95) 0 180px,transparent 182px),linear-gradient(135deg,#fffaf3 0%,#fff2df 46%,#eef7f1 100%);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",Arial,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(45deg,rgba(212,154,58,.08) 25%,transparent 25%),linear-gradient(-45deg,rgba(47,139,133,.07) 25%,transparent 25%);background-size:32px 32px;background-position:0 0,16px 16px;mask-image:linear-gradient(180deg,rgba(0,0,0,.34),transparent 72%)}
+button,input,select,textarea{font:inherit}button{cursor:pointer}
+:focus-visible{outline:3px solid rgba(47,139,133,.55);outline-offset:2px}
+.shell{display:grid;grid-template-columns:270px minmax(0,1fr);min-height:100vh}
+.side{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:22px;padding:24px;background:radial-gradient(circle at 28px 72px,rgba(255,211,132,.38),transparent 130px),linear-gradient(180deg,#2a4051 0%,#223648 56%,#1d3142 100%);color:#fff;overflow:hidden}
+.side:after{content:"";position:absolute;right:-58px;bottom:84px;width:170px;height:170px;border:1px solid rgba(255,236,202,.28);border-radius:999px;box-shadow:-40px -90px 0 -52px rgba(255,236,202,.42),-86px 42px 0 -62px rgba(119,184,164,.45);pointer-events:none}
+.brand{position:relative;z-index:1;display:flex;align-items:center;gap:12px}
+.mark{display:grid;place-items:center;width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#ffd982,#f6a06d);color:#102438;font-weight:900;box-shadow:0 10px 24px rgba(246,160,109,.28)}
+.brand span{display:block;margin-top:3px;color:rgba(255,255,255,.72);font-size:.84rem}
+.tabs{position:relative;z-index:1;display:grid;gap:8px}
+.tab{min-height:44px;border:1px solid transparent;border-radius:8px;background:transparent;color:rgba(255,255,255,.8);text-align:left;padding:10px 12px;transition:.16s}
+.tab.active,.tab:hover{background:rgba(255,255,255,.13);color:#fff;border-color:rgba(255,234,194,.34);transform:translateX(2px)}
+.sync{position:relative;z-index:1;margin-top:auto;border:1px solid rgba(255,234,194,.22);border-radius:8px;padding:14px;background:rgba(255,255,255,.1);line-height:1.6;color:rgba(255,255,255,.82);font-size:.88rem}
+.sync strong{color:#ffe2a8}
+main{padding:30px;min-width:0}
+.top{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:24px;padding:16px 18px;border:1px solid rgba(234,220,202,.72);border-radius:8px;background:rgba(255,255,255,.55);box-shadow:0 12px 28px rgba(122,83,45,.08)}
+.eyebrow{margin:0 0 6px;color:#a85f27;font-weight:900;font-size:.76rem;text-transform:uppercase;letter-spacing:.02em}
+h1,h2,h3,p{margin-top:0}h1{margin-bottom:0;font-size:clamp(1.45rem,3vw,2.2rem);line-height:1.18}h2{font-size:1.14rem}h3{font-size:1rem;margin-bottom:8px}
+.btn,.primary,.chip,.danger,.mealbtn,.filebtn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.9);color:var(--ink);min-height:38px;padding:8px 13px;box-shadow:0 7px 18px rgba(122,83,45,.06);text-decoration:none}
+.primary{background:linear-gradient(135deg,#c9604a,#c88a2c);border-color:#c0623f;color:#fff;font-weight:900;box-shadow:0 12px 26px rgba(217,111,87,.26)}
+.danger{border-color:#f0bbb5;background:#fff4f2;color:#a33328;font-weight:800}
+.filebtn{cursor:pointer}
+.small{min-height:30px;padding:4px 9px;font-size:.84rem}
+.view{display:none}.view.active{display:block}
+.grid{display:grid;gap:16px}.cards{grid-template-columns:repeat(4,minmax(0,1fr))}.twocol{grid-template-columns:repeat(2,minmax(0,1fr))}
+.panel,.card{border:1px solid var(--line);border-radius:8px;background:var(--panel);box-shadow:var(--shadow)}
+.pad{padding:18px}
+.grid>*,.workbench>*,.formwrap>*,.hero>*,.formgrid>*,.shell>*{min-width:0}
+.card{position:relative;overflow:hidden;padding:16px}.card:after{content:"";position:absolute;right:-28px;top:-28px;width:82px;height:82px;border-radius:999px;background:rgba(255,218,170,.55)}
+.card span{color:var(--muted);font-size:.88rem}.card strong{display:block;margin:6px 0 5px;color:#ac5640;font-size:1.9rem}.card p{margin:0;color:var(--muted);font-size:.86rem}
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);overflow:hidden;border-color:rgba(231,202,164,.82);background:radial-gradient(circle at 15% 18%,rgba(255,219,162,.52),transparent 180px),linear-gradient(135deg,rgba(255,255,255,.94),rgba(255,247,233,.92))}
+.hero-copy{padding:28px}.hero-copy h2{font-size:clamp(1.3rem,2.5vw,2.1rem);color:#263b4d}.hero-copy p:not(.eyebrow){color:var(--muted);line-height:1.7}
+.art{min-height:280px;background:linear-gradient(135deg,#e8f6f6,#fff7ea);position:relative;overflow:hidden}
+.art:before{content:"";position:absolute;inset:12%;border-radius:18px;background:#fff;box-shadow:var(--shadow)}
+.art:after{content:"";position:absolute;left:20%;top:28%;width:55%;height:52%;border-radius:14px;background:linear-gradient(180deg,#fff,#edf7f1);box-shadow:0 18px 35px rgba(38,59,77,.12)}
+.art b{position:absolute;z-index:1;display:block;border-radius:999px;height:12px}
+.art .l1{left:27%;top:40%;width:30%;background:#263b4d}.art .l2{left:27%;top:52%;width:40%;background:#9bd5cf}.art .l3{left:27%;top:64%;width:34%;background:#5e956c}
+.art .dot{left:66%;top:62%;width:64px;height:64px;background:#de6f61;border-radius:50%}
+.head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:14px}
+.filters,.seg,.actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.chip.active,.mealbtn.active{background:var(--sage);border-color:var(--teal);color:#236c68;font-weight:900}
+.workbench{display:grid;grid-template-columns:320px minmax(0,1fr);gap:14px}
+.list,.stack{display:grid;gap:10px}.list{max-height:600px;overflow:auto;align-content:start}
+.casebtn{width:100%;text-align:left;border:1px solid var(--line);background:rgba(255,255,255,.9);border-radius:8px;padding:12px;box-shadow:0 8px 20px rgba(122,83,45,.05);color:var(--ink)}
+.casebtn.active{background:linear-gradient(135deg,#fff6e8,#e8f4ed);border-color:#d99a3a}
+.casebtn span{display:block;color:var(--muted);font-size:.86rem;margin-top:4px}
+.detail{background:linear-gradient(135deg,rgba(255,250,242,.94),rgba(238,247,241,.9));border:1px solid rgba(234,220,202,.72);border-radius:8px;padding:16px;min-height:380px;min-width:0}
+.detail-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px;margin:-4px 0 14px}
+.badge{display:inline-flex;align-items:center;justify-content:center;min-width:72px;border-radius:99px;padding:6px 11px;font-weight:900;font-size:.88rem;white-space:nowrap}
+.mal{background:#ffe3dc;color:#9a3a2d}.risk{background:#fff1d8;color:#7a500f}.ok{background:#e1f3e2;color:#2f6740}.na{background:#eceae6;color:#57534d}
+.tag{display:inline-block;border-radius:6px;padding:1px 7px;font-size:.76rem;font-weight:800;vertical-align:middle}
+.tag.demo{background:#ece4ff;color:#5536a0}.tag.legacy{background:#e8eef4;color:#36506a}.tag.auto{background:#e2f3ee;color:#236c68}
+.data{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:10px;margin-bottom:12px}
+.tile,.item,.empty{background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:8px;padding:12px;box-shadow:0 7px 16px rgba(122,83,45,.05)}
+.empty{border-style:dashed;color:var(--muted);line-height:1.6}
+.tile span,.item span,.item p{color:var(--muted);line-height:1.55}.tile strong{display:block;margin-top:5px}
+.item strong{display:block;margin-bottom:4px}.item p{margin:0}
+.item strong.row{display:flex;justify-content:space-between;gap:10px}.item strong.row span{font-size:.78rem;font-weight:600}
+.src{display:block;margin-top:4px;font-size:.78rem;color:#94703f}
+.sugg{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.formgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+label.f{display:grid;gap:6px;color:var(--muted);font-size:.9rem;align-content:start}
+input,select,textarea{width:100%;min-height:38px;border:1px solid var(--line);border-radius:8px;padding:7px 10px;background:#fff;color:var(--ink)}
+input[type=checkbox],input[type=radio]{width:auto;min-height:auto;accent-color:var(--teal)}
+input:disabled,select:disabled{background:#f3f7f5;color:#236c68}
+textarea{min-height:70px;resize:vertical}
+fieldset.sec{display:grid;gap:12px;margin:0 0 14px;padding:14px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.88)}
+fieldset.sec legend{padding:0 6px;font-weight:900;color:var(--navy)}
+.hint{font-size:.8rem;color:var(--muted);line-height:1.5}
+.out{padding:9px 11px;border-radius:8px;background:#f4faf7;border:1px solid #cfe8e0;color:#22504c;font-size:.9rem;line-height:1.6}
+.q{display:grid;gap:6px}.q>span{color:var(--ink)}
+.radios{display:flex;gap:16px;flex-wrap:wrap}.radios label,.checks label{display:flex;align-items:center;gap:7px;color:var(--ink)}
+.checks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 12px}
+.formwrap{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:16px;align-items:start}
+.live{position:sticky;top:16px}
+.mealbox{min-height:170px;border:1px dashed #d4b98f;border-radius:8px;background:radial-gradient(circle at 30% 35%,rgba(255,214,149,.48),transparent 80px),linear-gradient(135deg,#fff9ef,#eaf5ed);display:grid;place-items:center;color:var(--muted);overflow:hidden}
+.mealbox img{width:100%;height:220px;object-fit:cover}
+.plates{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.bar{display:grid;gap:5px}.bar div:first-child{display:flex;justify-content:space-between;color:var(--muted);font-size:.9rem}
+.track{height:10px;background:#f0e5d6;border-radius:99px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--gold))}
+.demo-box{border:2px dashed #b9a5e6;border-radius:8px;padding:12px;background:#faf7ff;display:grid;gap:10px}
+.trendbox{min-height:240px;border-radius:8px;background:linear-gradient(180deg,#fffdf8,#f5faf5);overflow:hidden}
+.trendbox svg{display:block}
+.timeline{display:grid;gap:12px;margin:0;padding:0;list-style:none;counter-reset:s}
+.timeline li{position:relative;padding:12px 12px 12px 42px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.88);counter-increment:s}
+.timeline li:before{content:counter(s);position:absolute;left:12px;top:13px;display:grid;place-items:center;width:22px;height:22px;border-radius:999px;background:var(--teal);color:#fff;font-weight:900}
+.timeline span{display:block;color:var(--muted)}
+.tblwrap{overflow-x:auto}
+table.tbl{width:100%;border-collapse:collapse;font-size:.88rem;background:#fff}
+.tbl th,.tbl td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+.tbl th{background:#fbf3e6;color:var(--navy);white-space:nowrap}
+.task{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:start}
+.task.done{opacity:.55}.task.done strong{text-decoration:line-through}
+.overdue{color:#a33328;font-weight:800}
+.notice{border-left:4px solid var(--gold);background:#fff8e8;padding:10px 12px;border-radius:6px;color:#5d4a26;line-height:1.6;font-size:.9rem}
+.refs{margin:0;padding-left:20px;line-height:1.7;color:var(--muted);font-size:.88rem}
+.toast{position:fixed;right:22px;bottom:22px;background:linear-gradient(135deg,#2a4051,#5b4a3b);color:#fff;border-radius:8px;padding:12px 14px;opacity:0;transform:translateY(10px);transition:.18s;max-width:min(420px,calc(100vw - 32px));box-shadow:var(--shadow);pointer-events:none;z-index:10}
+.toast.show{opacity:1;transform:none}
+#printArea{display:none}
+@media(max-width:1180px){.formwrap{grid-template-columns:1fr}.live{position:static}}
+@media(max-width:980px){.shell{grid-template-columns:1fr}.side{position:relative;height:auto;gap:14px}.side:after{display:none}.tabs{grid-template-columns:repeat(5,1fr)}.tab{text-align:center;padding:8px 4px;font-size:.88rem}.cards,.hero,.workbench,.twocol{grid-template-columns:1fr}.art{min-height:200px}.formgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){main,.side{padding:16px}.top,.head{flex-direction:column;align-items:stretch}.formgrid,.checks,.plates{grid-template-columns:1fr}.tabs{grid-template-columns:repeat(2,1fr)}.art{display:none}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.card strong{font-size:1.5rem}.hero-copy{padding:18px}}
+@media print{.shell,.toast{display:none!important}#printArea{display:block!important;font-size:11pt;color:#000}#printArea table{width:100%;border-collapse:collapse}#printArea th,#printArea td{border:1px solid #999;padding:4px 6px;text-align:left}body{background:#fff}body:before{display:none}}
 </style>
 </head>
-<body><div class="shell"><aside class="side"><div class="brand"><div class="mark">AI</div><div><strong>營養協作平台</strong><span>ICOPE × HIS × 社區照護</span></div></div><nav class="tabs"><button class="tab active" data-view="overview">01 全期總覽</button><button class="tab" data-view="clinical">02 臨床端</button><button class="tab" data-view="community">03 社區端</button><button class="tab" data-view="system">04 系統治理</button></nav><div class="sync">新版暖色美術設計已套用：保留病人建檔、ICOPE、餐食分析、趨勢與照護追蹤。</div></aside><main><header class="top"><div><p class="eyebrow">Phase 2 interactive prototype</p><h1>跨住院、社區、居家的 AI 營養照護中樞</h1></div><button class="primary" id="exportBtn">匯出週報</button></header>
-<section class="view active" id="overview"><div class="grid"><section class="panel hero"><div class="hero-copy"><p class="eyebrow">AI risk engine</p><h2>單一介面掌握個案營養風險、飲食趨勢與追蹤任務</h2><p>以 ICOPE、BMI、白蛋白、體重變化、食慾與吞嚥狀況建立分級提示，支援營養照會、社區預警與個別化衛教。</p><div class="actions"><span class="btn"><strong id="totalCases">0</strong> 個案</span><span class="btn"><strong id="highRiskCases">0</strong> 高風險</span><span class="btn"><strong id="openTasks">0</strong> 待追蹤</span></div></div><div class="art" aria-hidden="true"><b class="l1"></b><b class="l2"></b><b class="l3"></b><b class="dot"></b></div></section><section class="grid cards"><article class="card"><span>BMI 異常</span><strong id="bmiMetric">0%</strong><p>低體重或近期明顯下降</p></article><article class="card"><span>飲食不足</span><strong id="intakeMetric">0%</strong><p>攝取量低於建議 75%</p></article><article class="card"><span>吞嚥警訊</span><strong id="swallowMetric">0</strong><p>需安排吞嚥或口腔評估</p></article><article class="card"><span>社區預警</span><strong id="communityMetric">0</strong><p>建議一週內訪視</p></article></section><section class="panel" style="padding:18px"><div class="head"><div><p class="eyebrow">New patient intake</p><h2>新病人資料輸入</h2></div></div><form class="formgrid" id="patientForm"><label>建檔者身分<select name="enteredBy"><option>營養師</option><option>衛教師</option></select></label><label>病人姓名<input name="name" value="新病人" required></label><label>評估日期<input name="assessmentDate" type="date" required></label><label>年齡<input name="age" type="number" value="76" min="0" max="120" required></label><label>性別<select name="gender"><option>女</option><option>男</option><option>其他/未註明</option></select></label><label>建檔場域<select name="setting"><option>住院</option><option>社區</option><option>居家</option></select></label><label>BMI<input name="bmi" type="number" value="20.0" min="10" max="60" step="0.1" required></label><label>白蛋白 g/dL<input name="albumin" type="number" value="3.5" min="1" max="6" step="0.1" required></label><label>近月體重變化 kg<input name="weightChange" type="number" value="-1.0" min="-20" max="20" step="0.1" required></label><fieldset class="icope-fieldset"><legend>ICOPE 功能評估（勾選異常項目）</legend><div class="icope-options"><label><input name="icopeDomain" type="checkbox" value="認知功能"> 認知功能</label><label><input name="icopeDomain" type="checkbox" value="行動能力"> 行動能力</label><label><input name="icopeDomain" type="checkbox" value="營養狀況"> 營養狀況</label><label><input name="icopeDomain" type="checkbox" value="視力"> 視力</label><label><input name="icopeDomain" type="checkbox" value="聽力"> 聽力</label><label><input name="icopeDomain" type="checkbox" value="情緒"> 情緒</label></div><input name="icope" type="hidden" value="0"><output class="icope-count" id="icopeCount">0 項異常</output></fieldset><label>食慾狀況<select name="appetite"><option>正常</option><option>略差</option><option>差</option></select></label><label>攝食量 %<input name="intake" type="number" value="75" min="0" max="100" required></label><label>咀嚼吞嚥狀況<select name="swallow"><option value="false">無明顯困難</option><option value="true">疑似嗆咳或吞嚥困難</option></select></label><div class="actions"><button class="primary" type="submit">建立並分級</button><button class="btn" type="reset" id="resetBtn">重設</button></div></form></section><section class="panel" style="padding:18px"><div class="head"><div><p class="eyebrow">Case command</p><h2>個案風險工作台</h2></div><div class="filters"><button class="chip active" data-risk="all">全部</button><button class="chip" data-risk="high">高</button><button class="chip" data-risk="medium">中</button><button class="chip" data-risk="low">低</button></div></div><div class="workbench"><div class="list" id="caseList"></div><article class="detail" id="caseDetail"></article></div></section><section class="panel" style="padding:18px"><div class="head"><div><p class="eyebrow">Trend view</p><h2>全期營養趨勢</h2></div><select id="trendMode"><option value="weight">體重</option><option value="intake">攝食量</option><option value="albumin">白蛋白</option></select></div><canvas id="trendChart" width="760" height="260"></canvas></section></div></section>
-<section class="view" id="clinical"><div class="grid twocol"><section class="panel" style="padding:18px"><p class="eyebrow">Clinical risk</p><h2>營養評估與分級提示</h2><div class="stack" id="riskOutput"></div></section><section class="panel" style="padding:18px"><div class="head"><div><p class="eyebrow">Meal photo AI</p><h2>AI 餐食辨識分析</h2></div><label class="filebtn">上傳照片<input id="mealUpload" type="file" accept="image/*" hidden></label></div><div class="stack"><div class="mealbox" id="mealPreview">餐食照片</div><div class="seg"><button class="mealbtn active" data-meal="breakfast">早餐</button><button class="mealbtn" data-meal="lunch">午餐</button><button class="mealbtn" data-meal="dinner">晚餐</button></div><div class="stack" id="nutrientBars"></div></div></section><section class="panel" style="padding:18px"><div class="head"><div><p class="eyebrow">Care follow-up</p><h2>個案關懷追蹤</h2></div><button class="btn" id="addReferralBtn">新增照會</button></div><div class="stack" id="referralList"></div></section><section class="panel" style="padding:18px"><div class="head"><div><p class="eyebrow">Care team</p><h2>照護團隊訊息</h2></div><button class="btn" id="addTeamMessageBtn">新增訊息</button></div><div class="stack" id="teamMessageList"></div></section></div></section>
-<section class="view" id="community"><div class="grid twocol"><section class="panel" style="padding:18px"><p class="eyebrow">Community form</p><h2>訪視營養資料蒐集</h2><div class="stack"><div class="item"><strong>保留訪視蒐集項目</strong><span>體重變化、食慾狀況、飲食型態、咀嚼吞嚥功能仍作為社區端資料基礎。</span></div></div></section><section class="panel" style="padding:18px"><p class="eyebrow">Health education</p><h2>營養衛教輔助</h2><div class="stack"><div class="item"><strong>疾病別內容</strong><span>依疾病別或吞嚥安全需求提供個別化衛教重點。</span></div></div></section><section class="panel" style="padding:18px"><p class="eyebrow">Care route</p><h2>跨場域照護路徑</h2><ol class="timeline"><li><strong>住院評估</strong><span>ICOPE 與檢驗資料建立基準線</span></li><li><strong>出院銜接</strong><span>高風險個案自動列入社區追蹤</span></li><li><strong>社區訪視</strong><span>問卷、照片、語音資料持續回寫</span></li><li><strong>居家支持</strong><span>個別化衛教與菜單建議推播</span></li></ol></section></div></section><section class="view" id="system"><section class="panel" style="padding:18px"><p class="eyebrow">System governance</p><h2>系統功能建議</h2><div class="grid twocol"><div class="item"><strong>HIS / ICOPE 串接</strong><span>後續可自動帶入檢驗、BMI、ICOPE 與照會資訊。</span></div><div class="item"><strong>視覺化儀表板</strong><span>呈現高風險、攝食不足、體重下降與咀嚼吞嚥警訊。</span></div></div></section></section></main></div><div class="toast" id="toast"></div>
+<body>
+<div class="shell">
+<aside class="side">
+  <div class="brand"><div class="mark" aria-hidden="true">AI</div><div><strong>營養協作平台</strong><span>ICOPE × MNA-SF × GLIM</span></div></div>
+  <nav class="tabs" aria-label="頁面分區">
+    <button class="tab active" data-view="overview" aria-current="page">01 全期總覽</button>
+    <button class="tab" data-view="intake">02 評估建檔</button>
+    <button class="tab" data-view="clinical">03 臨床端</button>
+    <button class="tab" data-view="community">04 社區端</button>
+    <button class="tab" data-view="system">05 資料與方法</button>
+  </nav>
+  <div class="sync"><strong>資料只存在這台電腦的瀏覽器</strong>，不會上傳。請用代號或姓名縮寫建檔；公用電腦用畢請到「05 資料與方法」清除。</div>
+</aside>
+<main>
+<header class="top">
+  <div><p class="eyebrow">Phase 2 interactive prototype</p><h1>跨住院、社區、居家的高齡營養照護中樞</h1></div>
+  <div class="actions"><button class="primary" id="exportCsvTop">匯出週報（CSV）</button><button class="btn" id="printTop">列印週報</button></div>
+</header>
+
+<!-- 01 OVERVIEW -->
+<section class="view active" id="overview"><div class="grid">
+  <section class="panel hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Screening → assessment → diagnosis</p>
+      <h2>單一介面掌握個案營養狀態、趨勢與追蹤任務</h2>
+      <p>依 WHO ICOPE 營養初篩（體重減輕、食慾）→ MNA-SF 篩檢 → GLIM 診斷與嚴重度分級；攝食、吞嚥與 ICOPE 其他面向列為追蹤警訊。</p>
+      <div class="actions"><span class="btn"><strong id="totalCases">0</strong>&nbsp;個案</span><span class="btn"><strong id="malCases">0</strong>&nbsp;營養不良</span><span class="btn"><strong id="riskCases">0</strong>&nbsp;有風險</span><span class="btn"><strong id="openTasks">0</strong>&nbsp;待辦任務</span></div>
+    </div>
+    <div class="art" aria-hidden="true"><b class="l1"></b><b class="l2"></b><b class="l3"></b><b class="dot"></b></div>
+  </section>
+  <section class="grid cards">
+    <article class="card"><span>體重減輕</span><strong id="mWeight">0</strong><p>3 個月 &gt;3 kg 或 6 個月 &gt;5%</p></article>
+    <article class="card"><span>攝食不足</span><strong id="mIntake">0</strong><p>符合 GLIM 攝食減少條件</p></article>
+    <article class="card"><span>吞嚥警訊</span><strong id="mSwallow">0</strong><p>需安排吞嚥或口腔評估</p></article>
+    <article class="card"><span>社區／居家需追蹤</span><strong id="mCommunity">0</strong><p>營養不良或有風險</p></article>
+  </section>
+  <section class="panel pad">
+    <div class="head"><div><p class="eyebrow">Case command</p><h2>個案工作台</h2></div>
+      <div class="filters" role="group" aria-label="依營養狀態篩選">
+        <button class="chip active" data-tier="all">全部</button><button class="chip" data-tier="mal">營養不良</button><button class="chip" data-tier="risk">有風險</button><button class="chip" data-tier="ok">正常</button><button class="chip" data-tier="na">資料不足</button>
+      </div></div>
+    <div class="workbench"><div class="list" id="caseList"></div><article class="detail" id="caseDetail"></article></div>
+  </section>
+  <section class="panel pad">
+    <div class="head"><div><p class="eyebrow">Trend view</p><h2>全期營養趨勢 <span class="hint" id="trendWho"></span></h2></div>
+      <select id="trendMode" aria-label="趨勢指標" style="width:auto"><option value="weight">體重 kg</option><option value="bmi">BMI</option><option value="mna">MNA-SF 分數</option><option value="intake">攝食量 %</option><option value="albumin">白蛋白 g/dL</option></select></div>
+    <div class="trendbox" id="trend"></div>
+    <p class="hint" id="trendNote" style="margin:8px 0 0"></p>
+  </section>
+</div></section>
+
+<!-- 02 INTAKE -->
+<section class="view" id="intake">
+<div class="formwrap">
+<form class="panel pad" id="aForm" autocomplete="off">
+  <div class="head"><div><p class="eyebrow">Assessment intake</p><h2>營養評估建檔</h2></div>
+    <label class="f" style="min-width:220px">評估對象<select id="formTarget" name="target"><option value="new">＋ 新個案</option></select></label></div>
+  <p class="hint" id="lastHint" style="margin-top:-6px"></p>
+
+  <fieldset class="sec"><legend>1. 個案資料</legend>
+    <div class="formgrid">
+      <label class="f">個案代號 *<input name="name" required maxlength="30" placeholder="代號或姓名縮寫"></label>
+      <label class="f">性別<select name="sex"><option>女</option><option>男</option><option>其他</option><option>未註明</option></select></label>
+      <label class="f">年齡 *<input name="age" type="number" min="18" max="120" required inputmode="numeric"></label>
+      <label class="f">場域<select name="setting"><option>住院</option><option>社區</option><option>居家</option></select></label>
+      <label class="f">評估日期 *<input name="date" type="date" required></label>
+      <label class="f">填報者身分<select name="enteredBy"><option>營養師</option><option>衛教師</option><option>個管師</option><option>護理師</option></select></label>
+    </div>
+    <p class="hint">請勿輸入身分證字號、病歷號或全名。</p>
+  </fieldset>
+
+  <fieldset class="sec"><legend>2. 體位測量</legend>
+    <div class="formgrid">
+      <label class="f">身高 cm<input name="height" type="number" min="100" max="220" step="0.1" inputmode="decimal"></label>
+      <label class="f">目前體重 kg<input name="weight" type="number" min="20" max="250" step="0.1" inputmode="decimal"></label>
+      <label class="f">小腿圍 cm<input name="calf" type="number" min="15" max="60" step="0.1" inputmode="decimal"><span class="hint">無法量身高體重時，MNA-SF 改用小腿圍（F2）</span></label>
+      <label class="f">3 個月前體重 kg<input name="wt3m" type="number" min="20" max="250" step="0.1" inputmode="decimal"><span class="hint">依紀錄填寫；不知道請留空</span></label>
+      <label class="f">6 個月前體重 kg<input name="wt6m" type="number" min="20" max="250" step="0.1" inputmode="decimal"><span class="hint">GLIM 用（6 個月內減輕 %）</span></label>
+    </div>
+    <div class="out" id="anthroOut" aria-live="polite">—</div>
+  </fieldset>
+
+  <fieldset class="sec"><legend>3. ICOPE 初篩</legend>
+    <div class="q"><span>營養①　過去 3 個月，體重是否非刻意減輕超過 3 公斤？ <span class="tag auto" id="q1auto" hidden>依體重自動判定</span></span>
+      <div class="radios"><label><input type="radio" name="icopeWt" value="yes">是</label><label><input type="radio" name="icopeWt" value="no">否</label></div></div>
+    <div class="q"><span>營養②　過去 3 個月是否食慾不好？</span>
+      <div class="radios"><label><input type="radio" name="icopeApp" value="yes">是</label><label><input type="radio" name="icopeApp" value="no">否</label></div></div>
+    <div class="q"><span>其他面向初篩異常（勾選）</span>
+      <div class="checks"><label><input name="icopeDomain" type="checkbox" value="認知功能">認知功能</label><label><input name="icopeDomain" type="checkbox" value="行動能力">行動能力</label><label><input name="icopeDomain" type="checkbox" value="視力">視力</label><label><input name="icopeDomain" type="checkbox" value="聽力">聽力</label><label><input name="icopeDomain" type="checkbox" value="情緒">情緒（憂鬱）</label></div></div>
+    <div class="out" id="icopeOut" aria-live="polite">—</div>
+  </fieldset>
+
+  <fieldset class="sec"><legend>4. MNA-SF 營養篩檢</legend>
+    <div class="formgrid">
+      <label class="f">A　近 3 個月因食慾、消化或咀嚼吞嚥問題，進食量減少<select name="mnaA"><option value="">請選擇</option><option value="0">嚴重減少（0）</option><option value="1">中度減少（1）</option><option value="2">沒有減少（2）</option></select></label>
+      <label class="f">B　近 3 個月體重減輕 <span class="tag auto" id="bauto" hidden>依體重自動計算</span><select name="mnaB"><option value="">請選擇</option><option value="0">&gt;3 kg（0）</option><option value="1">不知道（1）</option><option value="2">1–3 kg（2）</option><option value="3">沒有減輕（3）</option></select></label>
+      <label class="f">C　活動能力<select name="mnaC"><option value="">請選擇</option><option value="0">臥床或需坐輪椅（0）</option><option value="1">可下床或離開椅子，但不外出（1）</option><option value="2">可外出（2）</option></select></label>
+      <label class="f">D　近 3 個月有心理壓力或急性疾病<select name="mnaD"><option value="">請選擇</option><option value="0">有（0）</option><option value="2">沒有（2）</option></select></label>
+      <label class="f">E　神經精神問題<select name="mnaE"><option value="">請選擇</option><option value="0">嚴重失智或憂鬱（0）</option><option value="1">輕度失智（1）</option><option value="2">沒有（2）</option></select></label>
+      <div class="f"><span>F　BMI（F1）或小腿圍（F2）</span><div class="out" id="mnaFOut">由體位測量自動帶入</div></div>
+    </div>
+    <div class="out" id="mnaOut" aria-live="polite">—</div>
+    <p class="hint" style="margin:0">題目為摘要改寫；正式紀錄請使用 Nestlé 官方 MNA®-SF 表單（mna-elderly.com）。</p>
+  </fieldset>
+
+  <fieldset class="sec"><legend>5. GLIM 診斷條件</legend>
+    <div class="formgrid">
+      <label class="f">攝食量（佔估計需求 %）<input name="intakePct" type="number" min="0" max="150" inputmode="numeric"><span class="hint">可由「03 臨床端 → 餐食紀錄」估算帶入</span></label>
+      <label class="f">攝食減少已持續<select name="intakeDur"><option value="">未填</option><option value="le1w">≤ 1 週</option><option value="1to2w">&gt;1 週，≤ 2 週</option><option value="gt2w">&gt; 2 週</option></select></label>
+      <label class="f">發炎／疾病負擔<select name="glimInfl"><option value="">未填</option><option value="none">無</option><option value="acute">急性疾病或傷害</option><option value="chronic">慢性疾病相關</option></select></label>
+      <label class="f">肌肉量（經驗證方法）<select name="glimMuscle"><option value="nm">未測量</option><option value="none">無減少</option><option value="mild">輕至中度減少</option><option value="severe">嚴重減少</option></select><span class="hint">BIA／DXA，採 AWGS 2019 切點</span></label>
+      <div class="f" style="align-self:center"><span class="radios"><label><input type="checkbox" name="glimGI">慢性腸胃道疾病影響消化吸收</label></span></div>
+    </div>
+  </fieldset>
+
+  <fieldset class="sec"><legend>6. 吞嚥、檢驗與備註</legend>
+    <div class="formgrid">
+      <label class="f">咀嚼吞嚥<select name="swallow"><option value="false">無明顯困難</option><option value="true">疑似嗆咳或吞嚥困難</option></select></label>
+      <label class="f">白蛋白 g/dL（選填）<input name="albumin" type="number" min="1" max="6" step="0.1" inputmode="decimal"></label>
+      <label class="f">CRP mg/dL（選填）<input name="crp" type="number" min="0" max="50" step="0.01" inputmode="decimal"></label>
+    </div>
+    <label class="f">備註<textarea name="note" maxlength="500" placeholder="飲食型態、處置、家屬需求…"></textarea></label>
+  </fieldset>
+
+  <div class="actions"><button class="primary" type="submit">儲存評估</button><button class="btn" type="button" id="formReset">清除表單</button></div>
+</form>
+
+<aside class="panel pad live" aria-live="polite">
+  <p class="eyebrow">Live result</p><h2>即時判讀</h2>
+  <div class="stack" id="live"></div>
+</aside>
+</div>
+</section>
+
+<!-- 03 CLINICAL -->
+<section class="view" id="clinical"><div class="grid">
+  <section class="panel pad">
+    <div class="head"><div><p class="eyebrow">Clinical assessment</p><h2>評估結果與處置建議</h2></div>
+      <label class="f" style="min-width:220px">個案<select id="clinPatient"></select></label></div>
+    <div id="clinResult"></div>
+  </section>
+  <div class="grid twocol">
+    <section class="panel pad">
+      <div class="head"><div><p class="eyebrow">Meal record</p><h2>餐食紀錄（吃了幾成）</h2></div></div>
+      <div class="stack">
+        <div class="plates">
+          <label class="f">早餐<select data-plate></select></label>
+          <label class="f">午餐<select data-plate></select></label>
+          <label class="f">晚餐<select data-plate></select></label>
+        </div>
+        <div class="out" id="plateOut">尚未填寫</div>
+        <div class="actions"><button class="btn" id="plateToForm">帶入評估表攝食量</button></div>
+        <p class="hint" style="margin:0">以供餐份量估算，假設供餐量符合估計需求；未吃完的部分請以實際剩食估計。</p>
+        <div class="demo-box">
+          <div class="head" style="margin:0"><strong>AI 餐食辨識 <span class="tag demo">示範</span></strong><label class="filebtn small">上傳照片<input id="mealUpload" type="file" accept="image/*" hidden></label></div>
+          <div class="mealbox" id="mealPreview">照片僅在本機預覽，不會上傳或儲存</div>
+          <p class="hint" style="margin:0">影像辨識模型尚未串接。下方為<strong>固定的示範資料</strong>，不是上傳照片的分析結果。</p>
+          <div class="seg"><button class="mealbtn active" data-meal="breakfast">示範早餐</button><button class="mealbtn" data-meal="lunch">示範午餐</button><button class="mealbtn" data-meal="dinner">示範晚餐</button></div>
+          <div class="stack" id="nutrientBars"></div>
+        </div>
+      </div>
+    </section>
+    <section class="panel pad" id="taskPanel">
+      <div class="head"><div><p class="eyebrow">Care follow-up</p><h2>關懷追蹤與照會</h2></div><label class="radios hint"><input type="checkbox" id="showDone">顯示已完成</label></div>
+      <div class="formgrid">
+        <label class="f">個案<select id="taskPatient"></select></label>
+        <label class="f">類別<select id="taskType"><option>營養照會</option><option>吞嚥評估</option><option>再評估</option><option>社區訪視</option><option>電話關懷</option><option>其他</option></select></label>
+        <label class="f">期限<input id="taskDue" type="date"></label>
+      </div>
+      <label class="f" style="margin-top:10px">內容<input id="taskNote" maxlength="200" placeholder="例：追蹤三日飲食紀錄"></label>
+      <div class="actions" style="margin:10px 0 14px"><button class="primary" id="addTaskBtn">新增追蹤</button></div>
+      <div class="stack" id="taskList"></div>
+    </section>
+  </div>
+  <section class="panel pad">
+    <div class="head"><div><p class="eyebrow">Care team</p><h2>照護團隊訊息</h2></div></div>
+    <div class="formgrid">
+      <label class="f">身分<select id="msgRole"><option>營養師</option><option>衛教師</option><option>個管師</option><option>護理師</option><option>醫師</option><option>語言治療師</option></select></label>
+      <label class="f">相關個案（選填）<select id="msgPatient"></select></label>
+    </div>
+    <label class="f" style="margin-top:10px">訊息<textarea id="msgText" maxlength="500"></textarea></label>
+    <div class="actions" style="margin:10px 0 14px"><button class="primary" id="addMsgBtn">送出訊息</button></div>
+    <div class="stack" id="msgList"></div>
+  </section>
+</div></section>
+
+<!-- 04 COMMUNITY -->
+<section class="view" id="community"><div class="grid">
+  <section class="panel pad"><p class="eyebrow">Community watch-list</p><h2>社區／居家追蹤名單</h2><div class="stack" id="communityList"></div></section>
+  <div class="grid twocol">
+    <section class="panel pad"><p class="eyebrow">Health education</p><h2>營養衛教重點</h2>
+      <div class="stack">
+        <div class="item"><strong>吃不夠、體重下降</strong><span>少量多餐，每餐都有豆魚蛋肉類；以雞蛋、奶粉、豆腐、油脂做食物強化，正餐間加點心。飲食諮詢與食物強化仍不足時，使用口服營養補充品（ONS），每日至少 400 kcal、蛋白質 30 g 以上。</span><span class="src">ESPEN 高齡臨床營養指引 2019／2022</span></div>
+        <div class="item"><strong>蛋白質與熱量目標</strong><span>熱量參考值 30 kcal/kg/日、蛋白質至少 1.0 g/kg/日，依營養狀態、活動量、疾病與耐受度個別調整；蛋白質平均分配到三餐。</span><span class="src">ESPEN 2019（B 級）</span></div>
+        <div class="item"><strong>咀嚼吞嚥困難</strong><span>轉介語言治療師評估；依 IDDSI 選擇食物質地與液體稠度，採用質地調整且營養強化的餐點。進食時坐直、小口慢食、餐後保持口腔清潔。</span><span class="src">ESPEN 2019；IDDSI 架構</span></div>
+        <div class="item"><strong>維持肌肉</strong><span>營養介入搭配規律身體活動或運動，以維持肌肉量與功能。</span><span class="src">ESPEN 2019</span></div>
+      </div>
+    </section>
+    <section class="panel pad"><p class="eyebrow">Care route</p><h2>跨場域照護路徑</h2>
+      <ol class="timeline">
+        <li><strong>住院評估</strong><span>ICOPE 初篩、MNA-SF、GLIM 建立基準線</span></li>
+        <li><strong>出院銜接</strong><span>營養不良或有風險者建立社區追蹤任務</span></li>
+        <li><strong>社區訪視</strong><span>以「新增追蹤評估」回寫體重、攝食與吞嚥狀況</span></li>
+        <li><strong>居家支持</strong><span>依問題提供衛教重點、ONS 與菜單建議</span></li>
+      </ol>
+    </section>
+  </div>
+</div></section>
+
+<!-- 05 SYSTEM -->
+<section class="view" id="system"><div class="grid">
+  <section class="panel pad"><p class="eyebrow">Data</p><h2>資料管理</h2>
+    <div class="notice">資料儲存在此瀏覽器的 localStorage：換電腦、換瀏覽器、無痕視窗或清除網站資料都會遺失。請定期匯出備份；公用電腦用畢請清除。</div>
+    <div class="actions" style="margin-top:12px">
+      <button class="btn" id="exportCsv">匯出週報（CSV）</button>
+      <button class="btn" id="printReport">列印週報</button>
+      <button class="btn" id="exportJson">匯出備份（JSON）</button>
+      <label class="filebtn">匯入備份<input id="importJson" type="file" accept="application/json,.json" hidden></label>
+      <button class="btn" id="loadDemo">載入示例個案</button>
+      <button class="danger" id="clearAll" data-confirmed="false">清除本機全部資料</button>
+    </div>
+  </section>
+  <section class="panel pad"><p class="eyebrow">Method</p><h2>判讀邏輯與驗證狀態</h2>
+    <div class="tblwrap"><table class="tbl">
+      <thead><tr><th>項目</th><th>本頁做法</th><th>依據／狀態</th></tr></thead>
+      <tbody>
+        <tr><td>ICOPE 營養初篩</td><td>3 個月非刻意體重減輕 &gt;3 kg 或食慾不好，任一為「是」即陽性 → 進行 MNA-SF。有前後體重時自動判定第 1 題。</td><td>WHO ICOPE 指引（2019）</td></tr>
+        <tr><td>MNA-SF</td><td>A–F 六項，總分 14；12–14 正常、8–11 有風險、0–7 營養不良。B 項與 F 項由體位資料自動計算（BMI 優先，無 BMI 用小腿圍）。</td><td>已驗證篩檢工具（Kaiser 2009）</td></tr>
+        <tr><td>GLIM</td><td>≥1 表現型（6 個月內體重減輕 &gt;5%、BMI 亞洲切點 &lt;18.5／≥70 歲 &lt;20、肌肉量減少）＋ ≥1 病因型（攝食 ≤50% 需求 &gt;1 週或任何減少 &gt;2 週、慢性腸胃吸收問題、發炎）。嚴重度依 GLIM 表 4。</td><td>GLIM 共識（2019）；亞洲 BMI 嚴重度切點尚未建立，僅由 BMI 判定第 2 級時會提示</td></tr>
+        <tr><td>工作台分級</td><td>營養不良＝GLIM 確診或 MNA-SF ≤7；有風險＝MNA-SF 8–11，或 ICOPE 陽性但 MNA-SF 未完成；正常＝MNA-SF ≥12 或 ICOPE 陰性。</td><td>本頁整理的作業規則，未經驗證</td></tr>
+        <tr><td>熱量／蛋白質目標</td><td>30 kcal/kg、蛋白質 ≥1.0 g/kg（以目前體重計）。</td><td>ESPEN 2019 參考值，需個別調整</td></tr>
+        <tr><td>白蛋白、CRP</td><td>僅記錄與畫趨勢，不納入分級。</td><td>ASPEN 2021：白蛋白反映發炎與疾病嚴重度，不宜作營養指標</td></tr>
+        <tr><td>AI 餐食辨識</td><td>示範畫面，數值固定。</td><td>尚未串接模型，不可用於臨床</td></tr>
+      </tbody></table></div>
+  </section>
+  <div class="grid twocol">
+    <section class="panel pad"><p class="eyebrow">Integration</p><h2>後續系統串接規劃</h2>
+      <div class="stack">
+        <div class="item"><strong>HIS／ICOPE 串接</strong><span>自動帶入身高、體重歷史、檢驗、ICOPE 初篩與照會資訊，取代手動輸入。</span></div>
+        <div class="item"><strong>後端資料庫與權限</strong><span>正式上線需有帳號權限、稽核紀錄與院內資安規範，不應以瀏覽器儲存病人資料。</span></div>
+        <div class="item"><strong>餐食影像辨識</strong><span>需串接經驗證的影像模型與台灣食品營養成分資料庫，並與人工估算比對準確度。</span></div>
+      </div>
+    </section>
+    <section class="panel pad"><p class="eyebrow">References</p><h2>參考文獻</h2>
+      <ol class="refs">
+        <li>WHO. Integrated care for older people (ICOPE): guidance for person-centred assessment and pathways in primary care. Geneva: WHO; 2019.</li>
+        <li>Kaiser MJ, et al. Validation of the Mini Nutritional Assessment Short-Form (MNA®-SF). J Nutr Health Aging 2009;13:782-8.（MNA® 為 Société des Produits Nestlé SA 商標）</li>
+        <li>Cederholm T, et al. GLIM criteria for the diagnosis of malnutrition. Clin Nutr 2019;38:1-9.</li>
+        <li>Chen LK, et al. Asian Working Group for Sarcopenia: 2019 consensus update. J Am Med Dir Assoc 2020;21:300-7.</li>
+        <li>Volkert D, et al. ESPEN guideline on clinical nutrition and hydration in geriatrics. Clin Nutr 2019;38:10-47；ESPEN practical guideline 2022.</li>
+        <li>Evans DC, et al. The use of visceral proteins as nutrition markers: an ASPEN position paper. Nutr Clin Pract 2021;36:22-8.</li>
+        <li>IDDSI framework. iddsi.org</li>
+      </ol>
+    </section>
+  </div>
+  <section class="panel pad"><p class="eyebrow">Disclaimer</p><h2>免責聲明</h2>
+    <p class="hint" style="font-size:.9rem">本網站為營養照護流程的互動原型，用於教學與需求討論，不取代臨床判斷，也不是醫療器材。篩檢與診斷結果須由合格醫療人員確認。工作台分級規則與 AI 餐食辨識未經驗證。</p>
+  </section>
+</div></section>
+</main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div id="printArea"></div>
+
 <script>
-const STORAGE_KEY='ai-nutrition-new-patients-v2',LEGACY_KEYS=['ai-nutrition-new-patients-v3','ai-nutrition-new-patients'];const patients=[];let active='',riskFilter='all';const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];const meals={breakfast:['豆漿、地瓜、蒸蛋',430,24,51,17,'蛋白質足夠，建議補一份軟質蔬果。'],lunch:['外食便當半份',610,27,78,22,'鈉與精緻澱粉偏高，蔬菜份量不足。'],dinner:['軟質粥品與魚肉',520,31,60,14,'適合吞嚥疑慮個案，仍需確認液體稠度。']};const team=[['營養師','已完成營養風險分級，建議追蹤三日飲食紀錄。','今日 09:20'],['衛教師','已安排糖尿病餐盤衛教，家屬希望取得軟質菜單。','今日 10:05'],['個管師','出院後一週內安排社區訪視，需同步體重與食慾狀況。','今日 11:10']];function today(){const d=new Date(),o=d.getTimezoneOffset()*60000;return new Date(d.getTime()-o).toISOString().slice(0,10)}function dateLabels(s){const d=s?new Date(s+'T00:00:00'):new Date();if(isNaN(d.getTime()))return['第 1 週','第 2 週','第 3 週','第 4 週','本次'];return[-28,-21,-14,-7,0].map(x=>{const t=new Date(d);t.setDate(t.getDate()+x);return`${t.getMonth()+1}/${t.getDate()}`})}function series(now,change,prec=1){now=Number(now)||0;change=Number(change)||0;const old=now-change;return[old,old+change*.25,old+change*.5,old+change*.75,now].map(v=>Number(v.toFixed(prec)))}function normalize(p){p.assessmentDate=p.assessmentDate||today();p.icopeDomains=p.icopeDomains||[];p.icope=Number(p.icope??p.icopeDomains.length)||0;p.gender=p.gender||'未註明';p.trend=p.trend||{weight:series(55,p.weightChange),intake:series(p.intake,p.intake<80?-12:4,0),albumin:series(p.albumin,p.albumin<3.5?-.5:.2)};p.trendLabels=p.trendLabels||dateLabels(p.assessmentDate);return p}function load(){let rows=[];try{rows=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');if(!Array.isArray(rows)||!rows.length){for(const k of LEGACY_KEYS){const old=JSON.parse(localStorage.getItem(k)||'[]');if(Array.isArray(old)&&old.length){rows=old;break}}}if(Array.isArray(rows))patients.splice(0,patients.length,...rows.map(normalize));if(patients.length)save()}catch{patients.splice(0,patients.length)}active=patients[0]?.id||''}function save(){localStorage.setItem(STORAGE_KEY,JSON.stringify(patients))}function score(p){let s=0;if(p.bmi<18.5)s+=24;if(p.albumin<3.5)s+=22;if(p.weightChange<=-3)s+=22;else if(p.weightChange<=-1)s+=10;if(p.icope>=3)s+=16;if(p.intake<75)s+=14;if(p.swallow)s+=12;return Math.min(s,100)}function level(s){return s>=70?['high','高風險']:s>=38?['medium','中風險']:['low','低風險']}function patient(){return patients.find(p=>p.id===active)||patients[0]||null}function domains(){return $$('#patientForm input[name="icopeDomain"]:checked').map(i=>i.value)}function updateIcope(){const n=domains().length;$('#patientForm input[name="icope"]').value=String(n);$('#icopeCount').textContent=`${n} 項異常`}function setDate(){const i=$('#patientForm input[name="assessmentDate"]');if(i&&!i.value)i.value=today()}function follow(p){const f=[];if(p.albumin<3.5)f.push('白蛋白偏低');if(p.bmi<18.5)f.push('BMI 偏低');if(p.weightChange<=-3)f.push('體重快速下降');if(p.intake<75)f.push('攝食不足');if(p.appetite!=='正常')f.push('食慾'+p.appetite);if(p.swallow)f.push('咀嚼吞嚥疑慮');if(p.icope>=3)f.push('ICOPE 多項功能異常');const sc=score(p);return sc>=70?'高風險：建議今日營養照會並列入追蹤清單。原因：'+f.join('、'):sc>=38?'中風險：建議一週內追蹤飲食與體重。原因：'+(f.join('、')||'需持續觀察'):'低風險：維持例行追蹤，持續蒐集飲食與 ICOPE 資料'}function toast(t){const el=$('#toast');el.textContent=t;el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('show'),2400)}function metrics(){const total=patients.length,high=patients.filter(p=>level(score(p))[0]==='high').length,poor=patients.filter(p=>p.intake<75).length,bmi=patients.filter(p=>p.bmi<18.5||p.weightChange<=-3).length,sw=patients.filter(p=>p.swallow).length;$('#totalCases').textContent=total;$('#highRiskCases').textContent=high;$('#openTasks').textContent=high+poor;$('#bmiMetric').textContent=total?Math.round(bmi/total*100)+'%':'0%';$('#intakeMetric').textContent=total?Math.round(poor/total*100)+'%':'0%';$('#swallowMetric').textContent=sw;$('#communityMetric').textContent=patients.filter(p=>p.setting!=='住院'&&score(p)>=38).length;drawTrend()}function list(){const rows=patients.filter(p=>riskFilter==='all'||level(score(p))[0]===riskFilter);if(!rows.length){active='';$('#caseList').innerHTML='<div class="empty"><strong>尚未建立病人資料</strong><span>請由營養師或衛教師填寫新病人資料。</span></div>';return}if(!rows.find(p=>p.id===active))active=rows[0].id;$('#caseList').innerHTML=rows.map(p=>{const sc=score(p),lv=level(sc);return `<button class="casebtn ${p.id===active?'active':''}" data-id="${p.id}"><strong>${p.name}｜${p.gender||'未註明'}｜${p.age} 歲</strong><span>${p.setting} · ${p.diagnosis.join('、')} · ${lv[1]} ${sc}</span></button>`}).join('')}function detail(){const p=patient();if(!p){$('#caseDetail').innerHTML='<div class="empty"><p class="eyebrow">Awaiting intake</p><h2>等待新病人資料輸入</h2><span>建立後會產生營養風險分級與全期趨勢。</span></div>';risk();drawTrend();return}const sc=score(p),lv=level(sc);$('#caseDetail').innerHTML=`<div class="head"><div><p class="eyebrow">${p.id} · ${p.setting}</p><h2>${p.name}｜${p.diagnosis.join('、')}</h2></div><span class="badge ${lv[0]}">${lv[1]}</span></div><div class="detail-actions"><button class="danger" id="deletePatientBtn" data-confirmed="false">刪除病人資料</button></div><div class="data">${[['風險分數',sc],['評估日期',p.assessmentDate],['性別',p.gender],['BMI',p.bmi],['白蛋白',p.albumin+' g/dL'],['體重變化',p.weightChange+' kg'],['ICOPE',p.icope+' 項異常'],['ICOPE 功能',p.icopeDomains.length?p.icopeDomains.join('、'):'未勾選'],['食慾',p.appetite],['攝食量',p.intake+'%'],['咀嚼吞嚥',p.swallow?'疑似困難':'無明顯困難'],['填報者',p.enteredBy]].map(x=>`<div class="tile"><span>${x[0]}</span><strong>${x[1]}</strong></div>`).join('')}</div><div class="stack"><div class="item"><strong>AI 判讀</strong><span>${follow(p)}</span></div><div class="item"><strong>分級邏輯</strong><span>BMI、白蛋白、體重下降、ICOPE 功能異常、攝食不足與咀嚼吞嚥疑慮加權後分級。</span></div></div>`;risk();drawTrend()}function risk(){const p=patient();$('#riskOutput').innerHTML=p?`<div class="item"><strong>${p.name} · ${level(score(p))[1]} ${score(p)}</strong><span>${follow(p)}</span></div><div class="item"><strong>ICOPE 功能評估</strong><span>${p.icopeDomains.length?p.icopeDomains.join('、'):'尚未勾選異常功能'}</span></div>`:'<div class="item"><strong>尚無分級資料</strong><span>請先於全期總覽建立新病人資料。</span></div>'}function referrals(){const high=patients.filter(p=>score(p)>=70),rows=patients.length?(high.length?high:patients.slice(0,3)):[];$('#referralList').innerHTML=rows.length?rows.map(p=>`<div class="item"><strong>${p.name} · 風險 ${score(p)}</strong><span>${follow(p)}</span></div>`).join(''):'<div class="item"><strong>等待新病人資料</strong><span>建立病人後，系統會依分級自動列出關懷追蹤建議。</span></div>'}function messages(){const p=patient(),lead=p?['AI 摘要',`目前關注：${p.name}，${follow(p)}`,'即時']:['AI 摘要','尚未建立病人，團隊訊息將在建檔後連動個案。','即時'];$('#teamMessageList').innerHTML=[lead,...team].map(m=>`<div class="item"><strong class="row">${m[0]}<span>${m[2]}</span></strong><p>${m[1]}</p></div>`).join('')}function meal(key='breakfast'){const m=meals[key];$('#nutrientBars').innerHTML=`<div class="item"><strong>AI 辨識：${m[0]}</strong><span>${m[1]} kcal · ${m[5]}</span></div>`+[['蛋白質',m[2],'g'],['醣類',m[3],'g'],['脂肪',m[4],'g']].map(x=>`<div class="bar"><div><span>${x[0]}</span><strong>${x[1]}${x[2]}</strong></div><div class="track"><div class="fill" style="width:${Math.min(x[1],100)}%"></div></div></div>`).join('')}function currentMeal(){return document.querySelector('[data-meal].active')?.dataset.meal||'breakfast'}function drawTrend(){const c=$('#trendChart'),ctx=c.getContext('2d'),p=patient(),w=c.width,h=c.height;ctx.clearRect(0,0,w,h);ctx.fillStyle='#fffdf8';ctx.fillRect(0,0,w,h);if(!p){ctx.fillStyle='#716e67';ctx.font='16px Arial';ctx.textAlign='center';ctx.fillText('等待新病人資料輸入後產生趨勢',w/2,h/2);return}const mode=$('#trendMode').value,vals=p.trend[mode],labels=p.trendLabels||dateLabels(p.assessmentDate),pad=42,min=Math.min(...vals)*.96,max=Math.max(...vals)*1.04,step=(w-pad*2)/(vals.length-1);ctx.strokeStyle='#eadcca';for(let i=0;i<4;i++){const y=pad+((h-pad*2)/3)*i;ctx.beginPath();ctx.moveTo(pad,y);ctx.lineTo(w-pad,y);ctx.stroke()}const pts=vals.map((v,i)=>({x:pad+step*i,y:h-pad-((v-min)/(max-min||1))*(h-pad*2),v}));ctx.strokeStyle='#2f8b85';ctx.lineWidth=4;ctx.beginPath();pts.forEach((pt,i)=>i?ctx.lineTo(pt.x,pt.y):ctx.moveTo(pt.x,pt.y));ctx.stroke();pts.forEach((pt,i)=>{ctx.fillStyle='#fff';ctx.strokeStyle=i===pts.length-1?'#de6f61':'#2f8b85';ctx.lineWidth=3;ctx.beginPath();ctx.arc(pt.x,pt.y,6,0,Math.PI*2);ctx.fill();ctx.stroke();ctx.fillStyle='#716e67';ctx.font='14px Arial';ctx.textAlign='center';ctx.fillText(labels[i],pt.x,h-14);ctx.fillStyle='#24313a';ctx.fillText(String(pt.v),pt.x,pt.y-14)})}function sync(){metrics();list();detail();referrals();messages()}function add(e){e.preventDefault();const d=new FormData(e.currentTarget),setting=d.get('setting'),prefix=setting==='社區'?'C':setting==='居家'?'H':'P',icopeDomains=domains(),assessmentDate=d.get('assessmentDate')||today();const p={id:`${prefix}-${String(41000+patients.length+1).padStart(5,'0')}`,name:String(d.get('name')).trim()||'新病人',assessmentDate,age:+d.get('age'),gender:d.get('gender')||'未註明',setting,diagnosis:['營養追蹤'],bmi:+d.get('bmi'),albumin:+d.get('albumin'),weightChange:+d.get('weightChange'),icope:icopeDomains.length,icopeDomains,intake:+d.get('intake'),appetite:d.get('appetite'),swallow:d.get('swallow')==='true',enteredBy:d.get('enteredBy')||'營養師'};if(p.swallow)p.diagnosis.push('咀嚼吞嚥疑慮');normalize(p);patients.unshift(p);active=p.id;riskFilter='all';save();$$('.chip').forEach(c=>c.classList.toggle('active',c.dataset.risk==='all'));sync();e.currentTarget.reset();setDate();updateIcope();toast(`${p.name} 已建立，AI 已完成營養風險分級與趨勢更新。`)}function del(btn){const p=patient();if(!p)return;if(btn.dataset.confirmed!=='true'){btn.dataset.confirmed='true';btn.textContent='再按一次確認刪除';toast(`請再按一次確認刪除 ${p.name}。`);clearTimeout(del.t);del.t=setTimeout(()=>{btn.dataset.confirmed='false';btn.textContent='刪除病人資料'},3500);return}patients.splice(patients.findIndex(x=>x.id===p.id),1);active=patients[0]?.id||'';riskFilter='all';save();$$('.chip').forEach(c=>c.classList.toggle('active',c.dataset.risk==='all'));sync();toast(`${p.name} 的病人資料已刪除，儀表板與趨勢已更新。`)}function show(id){$$('.view').forEach(v=>v.classList.remove('active'));$('#'+id).classList.add('active');$$('.tab').forEach(t=>t.classList.toggle('active',t.dataset.view===id));drawTrend()}$$('.tab').forEach(b=>b.addEventListener('click',()=>show(b.dataset.view)));$$('.chip').forEach(b=>b.addEventListener('click',()=>{riskFilter=b.dataset.risk;$$('.chip').forEach(c=>c.classList.remove('active'));b.classList.add('active');sync()}));$('#caseList').addEventListener('click',e=>{const b=e.target.closest('.casebtn');if(!b)return;active=b.dataset.id;sync()});$('#caseDetail').addEventListener('click',e=>{const b=e.target.closest('#deletePatientBtn');if(b)del(b)});$('#patientForm').addEventListener('submit',add);$('#patientForm').addEventListener('change',e=>{if(e.target.name==='icopeDomain')updateIcope()});$('#resetBtn').addEventListener('click',()=>setTimeout(()=>{setDate();updateIcope()}));$('#trendMode').addEventListener('change',drawTrend);$$('[data-meal]').forEach(b=>b.addEventListener('click',()=>{$$('[data-meal]').forEach(x=>x.classList.remove('active'));b.classList.add('active');meal(b.dataset.meal)}));$('#mealUpload').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const img=new Image();img.src=URL.createObjectURL(f);img.onload=()=>URL.revokeObjectURL(img.src);$('#mealPreview').innerHTML='';$('#mealPreview').appendChild(img);meal(currentMeal());toast('照片已載入，AI 已產生熱量與三大營養素分析。')});$('#addReferralBtn').addEventListener('click',()=>toast('已依高風險規則建立個案關懷追蹤。'));$('#addTeamMessageBtn').addEventListener('click',()=>{const p=patient();team.unshift(['照護團隊',p?`已新增 ${p.name} 的跨團隊關懷訊息。`:'已新增待分派團隊訊息。','剛剛']);messages();toast('照護團隊訊息已新增。')});$('#exportBtn').addEventListener('click',()=>toast('週報已產生：含風險個案、飲食摘要與追蹤清單。'));window.addEventListener('resize',drawTrend);load();setDate();updateIcope();meal();sync();
-</script></body></html>
+/*ENGINE-START*/
+var NB = (function () {
+  'use strict';
+  var ICOPE_OTHER = ['認知功能', '行動能力', '視力', '聽力', '情緒'];
+  var MNA_LABEL = { A: '進食量', B: '體重減輕', C: '活動能力', D: '壓力／急性疾病', E: '神經精神', F: 'BMI 或小腿圍' };
+  var DUR_LABEL = { le1w: '≤1 週', '1to2w': '>1–2 週', gt2w: '>2 週' };
+
+  function num(v) { if (v === '' || v === null || v === undefined) return null; var n = Number(v); return isFinite(n) ? n : null; }
+  function r1(x) { return Math.round(x * 10) / 10; }
+  function pick(v, allowed) { v = num(v); return v !== null && allowed.indexOf(v) >= 0 ? v : null; }
+  function esc(s) { return String(s === null || s === undefined ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+
+  // Anthropometrics. Loss values are positive when weight went down.
+  function derive(a) {
+    var h = num(a.height), w = num(a.weight), w3 = num(a.wt3m), w6 = num(a.wt6m);
+    var bmi = (h && w) ? r1(w / Math.pow(h / 100, 2)) : num(a.bmiOnly);
+    return {
+      height: h, weight: w, calf: num(a.calf), bmi: bmi,
+      loss3: (w !== null && w3 !== null) ? r1(w3 - w) : null,
+      pct3: (w !== null && w3) ? r1((w3 - w) / w3 * 100) : null,
+      pct6: (w !== null && w6) ? r1((w6 - w) / w6 * 100) : null
+    };
+  }
+
+  // WHO ICOPE vitality (nutrition) step 1: weight loss >3 kg in 3 months, appetite loss.
+  function icope(a, d) {
+    var auto = d.loss3 !== null;
+    var q1 = auto ? d.loss3 > 3 : (a.icopeWt === 'yes' ? true : a.icopeWt === 'no' ? false : null);
+    var q2 = a.icopeApp === 'yes' ? true : a.icopeApp === 'no' ? false : null;
+    var nutri = (q1 === true || q2 === true || a.icopeNutriFlag === true) ? true : (q1 === false && q2 === false) ? false : null;
+    var others = (a.icopeDomains || []).filter(function (x) { return ICOPE_OTHER.indexOf(x) >= 0; });
+    return { q1: q1, q1auto: auto, q2: q2, nutri: nutri, others: others, count: others.length + (nutri ? 1 : 0) };
+  }
+
+  // MNA-SF (Kaiser 2009). B and F are derived from measurements when available.
+  function mna(a, d) {
+    var it = {}, src = {};
+    it.A = pick(a.mnaA, [0, 1, 2]);
+    if (d.loss3 !== null) { it.B = d.loss3 > 3 ? 0 : d.loss3 >= 1 ? 2 : 3; src.B = 'auto'; } else it.B = pick(a.mnaB, [0, 1, 2, 3]);
+    it.C = pick(a.mnaC, [0, 1, 2]);
+    it.D = pick(a.mnaD, [0, 2]);
+    it.E = pick(a.mnaE, [0, 1, 2]);
+    if (d.bmi !== null) { it.F = d.bmi < 19 ? 0 : d.bmi < 21 ? 1 : d.bmi < 23 ? 2 : 3; src.F = 'F1'; }
+    else if (d.calf !== null) { it.F = d.calf < 31 ? 0 : 3; src.F = 'F2'; }
+    else it.F = null;
+    var missing = ['A', 'B', 'C', 'D', 'E', 'F'].filter(function (k) { return it[k] === null; });
+    if (missing.length) return { items: it, src: src, missing: missing, score: null, band: null };
+    var s = it.A + it.B + it.C + it.D + it.E + it.F;
+    return { items: it, src: src, missing: [], score: s, band: s >= 12 ? 'normal' : s >= 8 ? 'risk' : 'mal' };
+  }
+
+  // GLIM (Cederholm 2019): >=1 phenotypic + >=1 etiologic. Asian BMI cut-offs for the phenotype.
+  function glim(a, d, age) {
+    age = num(age);
+    var phen = [], etio = [], phenUnknown = [], etioUnknown = [];
+    var stW = 0, stM = 0, stB = 0;
+    var wl = null;
+    if (d.pct3 !== null || d.pct6 !== null) wl = Math.max(d.pct3 === null ? -Infinity : d.pct3, d.pct6 === null ? -Infinity : d.pct6);
+    if (wl === null) phenUnknown.push('體重變化');
+    else if (wl > 5) { phen.push('6 個月內體重減輕 ' + wl + '%'); stW = wl > 10 ? 2 : 1; }
+    var lowBMI = false;
+    if (d.bmi === null || age === null) phenUnknown.push('BMI');
+    else {
+      var cut = age >= 70 ? 20 : 18.5;
+      if (d.bmi < cut) { lowBMI = true; phen.push('BMI ' + d.bmi + '（' + (age >= 70 ? '≥70 歲 <20' : '<70 歲 <18.5') + '）'); stB = 2; }
+    }
+    var mus = a.glimMuscle || 'nm';
+    if (mus === 'mild') { phen.push('肌肉量輕至中度減少'); stM = 1; }
+    else if (mus === 'severe') { phen.push('肌肉量嚴重減少'); stM = 2; }
+
+    var pct = num(a.intakePct), dur = a.intakeDur || '';
+    var intakeMet = null;
+    if (pct !== null && pct >= 100) intakeMet = false;
+    else if (pct !== null && DUR_LABEL[dur]) intakeMet = (pct <= 50 && dur !== 'le1w') || dur === 'gt2w';
+    if (intakeMet) etio.push('攝食 ' + pct + '% 需求，持續 ' + DUR_LABEL[dur]);
+    if (a.glimGI === true) etio.push('慢性腸胃道疾病影響消化吸收');
+    if (a.glimInfl === 'acute') etio.push('急性疾病或傷害（發炎）');
+    if (a.glimInfl === 'chronic') etio.push('慢性疾病相關發炎');
+    if (intakeMet === null && a.glimGI !== true) etioUnknown.push('攝食量與持續時間');
+    if (!a.glimInfl) etioUnknown.push('發炎／疾病負擔');
+
+    var dx;
+    if (phen.length && etio.length) dx = true;
+    else if ((!phen.length && !phenUnknown.length) || (!etio.length && !etioUnknown.length)) dx = false;
+    else dx = null;
+    var stage = dx ? Math.max(stW, stM, stB) : null;
+    return {
+      phen: phen, etio: etio, phenUnknown: phenUnknown, etioUnknown: etioUnknown,
+      dx: dx, stage: stage, bmiOnlyStage: !!(dx && stage === 2 && stB === 2 && stW < 2 && stM < 2),
+      muscleMeasured: mus !== 'nm', intakeMet: intakeMet, lowBMI: lowBMI, wlPct: wl
+    };
+  }
+
+  function tierOf(ic, m, g) {
+    if (g.dx === true || m.band === 'mal') return 'mal';
+    if (m.band === 'risk') return 'risk';
+    if (m.band === 'normal') return 'ok';
+    if (ic.nutri === true) return 'risk';
+    if (ic.nutri === false) return 'ok';
+    return 'na';
+  }
+
+  // ESPEN 2019 guiding values: 30 kcal/kg/d, protein >=1.0 g/kg/d.
+  function targets(d) {
+    if (d.weight === null) return null;
+    return { kcal: Math.round(d.weight * 30 / 10) * 10, protein: Math.round(d.weight * 1.0), obese: d.bmi !== null && d.bmi >= 30 };
+  }
+
+  function summary(ic, m, g) {
+    var ms = m.score !== null ? 'MNA-SF ' + m.score + ' 分' : '';
+    if (g.dx === true) return 'GLIM 營養不良第 ' + g.stage + ' 級（' + (g.stage === 2 ? '嚴重' : '中度') + '）' + (ms ? '；' + ms : '');
+    if (m.band === 'mal') return ms + '：營養不良範圍' + (g.dx === false ? '（GLIM 條件未符合）' : '，請完成 GLIM 診斷');
+    if (m.band === 'risk') return ms + '：有營養不良風險';
+    if (m.band === 'normal') return ms + '：營養狀態正常';
+    var miss = m.missing.map(function (k) { return MNA_LABEL[k]; }).join('、');
+    if (ic.nutri === true) return 'ICOPE 營養初篩陽性，MNA-SF 未完成（缺：' + miss + '）';
+    if (ic.nutri === false) return 'ICOPE 營養初篩陰性';
+    return '資料不足：請完成 ICOPE 營養初篩或 MNA-SF';
+  }
+
+  function suggest(a, p, d, ic, m, g, tier) {
+    var s = [];
+    function add(text, src, task) { s.push({ text: text, src: src || '', task: task || '' }); }
+    if (a.legacy) add('舊版資料轉入：缺少 MNA-SF 與體重歷史，請新增一次完整的追蹤評估。', '', '再評估');
+    if (ic.nutri === true && m.score === null) add('ICOPE 營養初篩陽性：完成 MNA-SF（ICOPE 第二步）。', 'WHO ICOPE 2019', '再評估');
+    if (tier === 'mal') {
+      add('營養不良：由營養師完整評估並擬定個別化營養照護計畫，定期監測成效。', 'ESPEN 2019', '營養照會');
+      if (g.dx !== true && m.band === 'mal') add('MNA-SF 落在營養不良範圍：以 GLIM 確認診斷與嚴重度（需 ≥1 表現型 ＋ ≥1 病因型）。', 'GLIM 2019', '');
+    } else if (tier === 'risk' && m.band) {
+      add('有營養不良風險：飲食諮詢、食物強化，並追蹤體重與攝食量。', 'ESPEN 2019', '電話關懷');
+    }
+    if ((tier === 'mal' || tier === 'risk') && g.intakeMet) add('攝食不足：飲食諮詢與食物強化仍不足時給予 ONS，每日至少 400 kcal、蛋白質 ≥30 g。', 'ESPEN 2019（A 級）', '營養照會');
+    if (a.swallow === true) add('咀嚼吞嚥疑慮：轉介語言治療師做吞嚥評估，依 IDDSI 調整食物質地與液體稠度。', 'ESPEN 2019；IDDSI', '吞嚥評估');
+    if (a.glimInfl === 'acute' || a.glimInfl === 'chronic') add('病因包含發炎或疾病負擔：同步處理原發疾病。', 'GLIM 2019', '');
+    var alb = num(a.albumin);
+    if (alb !== null && alb < 3.5) add('白蛋白 ' + alb + ' g/dL 偏低：主要反映發炎與疾病嚴重度，不單獨作為營養不良依據。', 'ASPEN 2021', '');
+    if (ic.others.length) add('ICOPE 其他面向異常（' + ic.others.join('、') + '）：依 ICOPE 路徑安排對應的進一步評估。', 'WHO ICOPE 2019', '再評估');
+    if (p && p.setting && p.setting !== '住院' && (tier === 'mal' || tier === 'risk')) add('社區／居家個案：安排訪視或電話追蹤體重與攝食。', '', '社區訪視');
+    if (g.dx === true && g.bmiOnlyStage) add('嚴重度僅由 BMI 判定為第 2 級；亞洲族群的 GLIM 嚴重度 BMI 切點尚未建立，請合併體重變化與肌肉量判斷。', 'GLIM 2019', '');
+    if (tier === 'ok') add('目前營養篩檢正常：依單位規範定期再篩檢，急性疾病或住院後提前重評。', '', '再評估');
+    return s;
+  }
+
+  function evaluate(a, p) {
+    p = p || {};
+    var d = derive(a), ic = icope(a, d), m = mna(a, d), g = glim(a, d, p.age);
+    var tier = tierOf(ic, m, g);
+    return {
+      d: d, icope: ic, mna: m, glim: g, tier: tier, targets: targets(d),
+      flags: { weightLoss: ic.q1 === true || (g.wlPct !== null && g.wlPct > 5), lowIntake: g.intakeMet === true, swallow: a.swallow === true, lowBMI: g.lowBMI },
+      summary: summary(ic, m, g), sugg: suggest(a, p, d, ic, m, g, tier)
+    };
+  }
+
+  function sorted(p) {
+    return (p.assessments || []).map(function (a, i) { return { a: a, i: i }; })
+      .sort(function (x, y) { return x.a.date < y.a.date ? -1 : x.a.date > y.a.date ? 1 : x.i - y.i; })
+      .map(function (x) { return x.a; });
+  }
+  function latest(p) { var s = sorted(p); return s.length ? s[s.length - 1] : null; }
+
+  function nextId(patients, prefix) {
+    var max = 41000;
+    (patients || []).forEach(function (p) { var m = /^[A-Z]+-(\d+)$/.exec(p.id || ''); if (m && +m[1] > max) max = +m[1]; });
+    return prefix + '-' + (max + 1);
+  }
+
+  function normalizePatient(p) {
+    p = p || {};
+    p.assessments = Array.isArray(p.assessments) ? p.assessments : [];
+    p.tasks = Array.isArray(p.tasks) ? p.tasks : [];
+    p.name = String(p.name || '未命名');
+    p.sex = p.sex || '未註明';
+    p.setting = p.setting || '住院';
+    p.age = num(p.age);
+    return p;
+  }
+
+  // v1–v3 records stored one flat assessment with a synthetic trend. Keep measured fields only.
+  function migrateLegacy(o) {
+    var doms = o.icopeDomains || [];
+    var a = {
+      id: 'a-legacy', date: o.assessmentDate || '', legacy: true,
+      bmiOnly: num(o.bmi), albumin: num(o.albumin), intakePct: num(o.intake), intakeDur: '',
+      icopeDomains: doms.filter(function (x) { return ICOPE_OTHER.indexOf(x) >= 0; }),
+      icopeWt: '', icopeApp: '', glimMuscle: 'nm', glimInfl: '', swallow: !!o.swallow, enteredBy: o.enteredBy || '',
+      note: '舊版資料：近月體重變化 ' + (num(o.weightChange) === null ? '—' : o.weightChange + ' kg') + '；食慾 ' + (o.appetite || '—')
+    };
+    if (doms.indexOf('營養狀況') >= 0) a.icopeNutriFlag = true;
+    return normalizePatient({ id: o.id, name: o.name, sex: o.gender, age: o.age, setting: o.setting, enteredBy: o.enteredBy, assessments: [a], tasks: [] });
+  }
+  function migrateAll(list) {
+    var out = [], seen = {};
+    (list || []).forEach(function (o) {
+      if (!o || typeof o !== 'object') return;
+      var p = migrateLegacy(o);
+      if (!p.id || seen[p.id]) p.id = nextId(out, p.setting === '社區' ? 'C' : p.setting === '居家' ? 'H' : 'P');
+      seen[p.id] = true; out.push(p);
+    });
+    return out;
+  }
+
+  function csvCell(v) {
+    if (v === null || v === undefined) return '';
+    var s = String(v);
+    if (typeof v === 'string' && /^[=+\-@]/.test(s) && !isFinite(Number(s))) s = "'" + s;
+    return /[",\n\r]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+  }
+  function toCSV(rows) { return rows.map(function (r) { return r.map(csvCell).join(','); }).join('\r\n'); }
+
+  return { num: num, esc: esc, derive: derive, icope: icope, mna: mna, glim: glim, evaluate: evaluate, sorted: sorted, latest: latest, nextId: nextId, normalizePatient: normalizePatient, migrateLegacy: migrateLegacy, migrateAll: migrateAll, toCSV: toCSV, MNA_LABEL: MNA_LABEL, DUR_LABEL: DUR_LABEL };
+})();
+if (typeof module !== 'undefined') module.exports = NB;
+/*ENGINE-END*/
+</script>
+<script>
+(function () {
+'use strict';
+var KEY = 'ai-nutrition-v4', OLD_KEYS = ['ai-nutrition-new-patients-v2', 'ai-nutrition-new-patients-v3', 'ai-nutrition-new-patients'];
+var $ = function (s) { return document.querySelector(s); }, $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); }, E = NB.esc;
+var TIER = { mal: '營養不良', risk: '有風險', ok: '正常', na: '資料不足' };
+var S = { patients: [], messages: [] }, active = '', filter = 'all';
+var F = $('#aForm'), fe = function (k) { return F.elements.namedItem(k); };
+var store = {
+  get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+  set: function (k, v) { try { localStorage.setItem(k, v); return true; } catch (e) { return false; } },
+  del: function (k) { try { localStorage.removeItem(k); } catch (e) {} }
+};
+function uid(p) { return p + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
+function isoDate(d) { return new Date(d.getTime() - d.getTimezoneOffset() * 6e4).toISOString().slice(0, 10); }
+function todayStr() { return isoDate(new Date()); }
+function addDays(s, n) { var d = new Date(s + 'T00:00:00'); d.setDate(d.getDate() + n); return isoDate(d); }
+function fmtTime(iso) { var d = new Date(iso); if (isNaN(d)) return ''; return isoDate(d) + ' ' + String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0'); }
+function v(x, unit) { return x === null || x === undefined || x === '' ? '—' : x + (unit || ''); }
+function toast(t) { var el = $('#toast'); el.textContent = t; el.classList.add('show'); clearTimeout(toast.t); toast.t = setTimeout(function () { el.classList.remove('show'); }, 2800); }
+
+function load() {
+  var raw = store.get(KEY);
+  if (raw) {
+    try { var o = JSON.parse(raw); S = { patients: (Array.isArray(o.patients) ? o.patients : []).map(NB.normalizePatient), messages: Array.isArray(o.messages) ? o.messages : [] }; } catch (e) {}
+  } else {
+    for (var i = 0; i < OLD_KEYS.length; i++) {
+      var old; try { old = JSON.parse(store.get(OLD_KEYS[i]) || '[]'); } catch (e) { old = []; }
+      if (Array.isArray(old) && old.length) { S.patients = NB.migrateAll(old); save(); setTimeout(function () { toast('已將舊版 ' + S.patients.length + ' 位個案轉入新格式，請為每位個案新增追蹤評估。'); }, 300); break; }
+    }
+  }
+  active = S.patients[0] ? S.patients[0].id : '';
+}
+function save() { if (!store.set(KEY, JSON.stringify(S))) toast('無法寫入瀏覽器儲存空間，資料只會保留到關閉頁面為止。'); }
+function getP(id) { for (var i = 0; i < S.patients.length; i++) if (S.patients[i].id === id) return S.patients[i]; return null; }
+function rowOf(p) { var a = NB.latest(p); return { p: p, a: a, r: a ? NB.evaluate(a, p) : null }; }
+function tierOfRow(x) { return x.r ? x.r.tier : 'na'; }
+function rows() { return S.patients.map(rowOf); }
+function openTasks(p) { return p.tasks.filter(function (t) { return !t.done; }); }
+function nameTags(p) { return E(p.name) + (p.demo ? ' <span class="tag demo">示例</span>' : '') + (NB.latest(p) && NB.latest(p).legacy ? ' <span class="tag legacy">舊版</span>' : ''); }
+
+/* ---------- overview ---------- */
+function renderMetrics() {
+  var R = rows();
+  var cnt = function (f) { return R.filter(f).length; };
+  $('#totalCases').textContent = R.length;
+  $('#malCases').textContent = cnt(function (x) { return tierOfRow(x) === 'mal'; });
+  $('#riskCases').textContent = cnt(function (x) { return tierOfRow(x) === 'risk'; });
+  $('#openTasks').textContent = S.patients.reduce(function (n, p) { return n + openTasks(p).length; }, 0);
+  $('#mWeight').textContent = cnt(function (x) { return x.r && x.r.flags.weightLoss; });
+  $('#mIntake').textContent = cnt(function (x) { return x.r && x.r.flags.lowIntake; });
+  $('#mSwallow').textContent = cnt(function (x) { return x.r && x.r.flags.swallow; });
+  $('#mCommunity').textContent = cnt(function (x) { return x.p.setting !== '住院' && (tierOfRow(x) === 'mal' || tierOfRow(x) === 'risk'); });
+}
+function renderList() {
+  var R = rows().filter(function (x) { return filter === 'all' || tierOfRow(x) === filter; });
+  if (!R.length) {
+    active = filter === 'all' ? '' : active;
+    $('#caseList').innerHTML = S.patients.length
+      ? '<div class="empty"><strong>此分級目前沒有個案</strong><br><span>請切換其他篩選。</span></div>'
+      : '<div class="empty"><strong>尚未建立個案</strong><br><span>請到「02 評估建檔」新增，或在「05 資料與方法」載入示例個案。</span></div>';
+    return [];
+  }
+  if (!R.some(function (x) { return x.p.id === active; })) active = R[0].p.id;
+  $('#caseList').innerHTML = R.map(function (x) {
+    var t = tierOfRow(x), ms = x.r && x.r.mna.score !== null ? ' · MNA-SF ' + x.r.mna.score : '';
+    return '<button class="casebtn ' + (x.p.id === active ? 'active' : '') + '" data-id="' + E(x.p.id) + '"><strong>' + nameTags(x.p) + '｜' + E(x.p.sex) + '｜' + v(x.p.age, ' 歲') + '</strong><span>' + E(x.p.setting) + ' · <span class="badge ' + t + '" style="min-width:0;padding:1px 8px;display:inline">' + TIER[t] + '</span>' + ms + ' · ' + E(x.a ? x.a.date : '未評估') + '</span></button>';
+  }).join('');
+  return R;
+}
+function inFilter(p) { return filter === 'all' || tierOfRow(rowOf(p)) === filter; }
+function renderDetail() {
+  var p = getP(active);
+  if (!p || !inFilter(p)) {
+    $('#caseDetail').innerHTML = '<div class="empty"><p class="eyebrow">Awaiting intake</p><h2>' + (S.patients.length ? '請從左側選擇個案' : '等待建立個案') + '</h2><span>建立評估後會顯示篩檢結果、分級與趨勢。</span></div>';
+    return;
+  }
+  var x = rowOf(p), a = x.a, r = x.r;
+  var tiles = a ? [
+    ['MNA-SF', r.mna.score !== null ? r.mna.score + ' / 14' : '未完成'],
+    ['GLIM', r.glim.dx === true ? '第 ' + r.glim.stage + ' 級' : r.glim.dx === false ? '未符合' : '資料不足'],
+    ['BMI', v(r.d.bmi)], ['體重', v(r.d.weight, ' kg')],
+    ['3 個月體重變化', r.d.loss3 === null ? '—' : (r.d.loss3 > 0 ? '−' + r.d.loss3 : '+' + (-r.d.loss3)) + ' kg'],
+    ['ICOPE 異常', r.icope.count + ' 項'], ['攝食量', v(a.intakePct, '%')], ['咀嚼吞嚥', a.swallow ? '疑似困難' : '無明顯困難']
+  ] : [];
+  $('#caseDetail').innerHTML =
+    '<div class="head"><div><p class="eyebrow">' + E(p.id) + ' · ' + E(p.setting) + ' · 評估 ' + p.assessments.length + ' 次</p><h2>' + nameTags(p) + '</h2></div><span class="badge ' + (r ? r.tier : 'na') + '">' + TIER[r ? r.tier : 'na'] + '</span></div>' +
+    '<div class="detail-actions"><button class="btn small" data-act="reassess">新增追蹤評估</button><button class="btn small" data-act="toClinical">完整評估與建議</button><button class="danger small" data-act="delPatient" data-confirmed="false">刪除個案</button></div>' +
+    (a ? '<div class="data">' + tiles.map(function (t) { return '<div class="tile"><span>' + t[0] + '</span><strong>' + E(t[1]) + '</strong></div>'; }).join('') + '</div>' +
+      '<div class="item"><strong>判讀（' + E(a.date) + '）</strong><span>' + E(r.summary) + '</span></div>'
+      : '<div class="empty">尚無評估紀錄。</div>');
+}
+
+/* ---------- trend (SVG, sized to its container) ---------- */
+function metricVal(a, p, mode) {
+  var d = NB.derive(a);
+  if (mode === 'weight') return d.weight;
+  if (mode === 'bmi') return d.bmi;
+  if (mode === 'mna') return NB.evaluate(a, p).mna.score;
+  if (mode === 'intake') return NB.num(a.intakePct);
+  if (mode === 'albumin') return NB.num(a.albumin);
+  return null;
+}
+function drawTrend() {
+  var box = $('#trend'), p = getP(active), mode = $('#trendMode').value, note = $('#trendNote');
+  $('#trendWho').textContent = p ? '— ' + p.name : '';
+  if (!p) { box.innerHTML = '<div class="empty" style="margin:16px">選擇個案後顯示趨勢。</div>'; note.textContent = ''; return; }
+  var pts = NB.sorted(p).map(function (a) { return { date: a.date, v: metricVal(a, p, mode) }; }).filter(function (o) { return o.v !== null && o.date; });
+  if (!pts.length) { box.innerHTML = '<div class="empty" style="margin:16px">此個案沒有這項指標的紀錄。</div>'; note.textContent = ''; return; }
+  var W = Math.max(280, box.clientWidth || 640), H = 240, pl = 44, pt = 26, pb = 34;
+  var t = pts.map(function (o) { return new Date(o.date + 'T00:00:00').getTime(); });
+  var t0 = Math.min.apply(null, t), t1 = Math.max.apply(null, t);
+  var vals = pts.map(function (o) { return o.v; });
+  var refs = mode === 'mna' ? [[12, '正常 ≥12'], [8, '風險 ≥8']] : mode === 'bmi' ? [[p.age >= 70 ? 20 : 18.5, 'GLIM 切點']] : [];
+  var pr = refs.length ? 62 : 18;
+  var all = vals.concat(refs.map(function (r) { return r[0]; }));
+  var lo = Math.min.apply(null, all), hi = Math.max.apply(null, all);
+  if (mode === 'mna') { lo = 0; hi = 14; }
+  var padv = (hi - lo) * 0.12 || 1; if (mode !== 'mna') { lo -= padv; hi += padv; }
+  var ix = 22, X = function (i) { return t1 === t0 ? (pl + (W - pl - pr) / 2) : pl + ix + (t[i] - t0) / (t1 - t0) * (W - pl - pr - 2 * ix); };
+  var Y = function (val) { return pt + (hi - val) / (hi - lo) * (H - pt - pb); };
+  var s = '<svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="趨勢圖">';
+  for (var g = 0; g <= 3; g++) { var gv = lo + (hi - lo) * g / 3, gy = Y(gv); s += '<line x1="' + pl + '" x2="' + (W - pr) + '" y1="' + gy + '" y2="' + gy + '" stroke="#eadcca"/><text x="' + (pl - 6) + '" y="' + (gy + 4) + '" font-size="11" fill="#6b6862" text-anchor="end">' + (Math.round(gv * 10) / 10) + '</text>'; }
+  refs.forEach(function (r) { var y = Y(r[0]); s += '<line x1="' + pl + '" x2="' + (W - pr) + '" y1="' + y + '" y2="' + y + '" stroke="#de6f61" stroke-dasharray="5 4"/><text x="' + (W - pr + 4) + '" y="' + (y + 4) + '" font-size="10" fill="#a33328">' + r[1] + '</text>'; });
+  if (pts.length > 1) s += '<polyline fill="none" stroke="#2f8b85" stroke-width="3" points="' + pts.map(function (o, i) { return X(i) + ',' + Y(o.v); }).join(' ') + '"/>';
+  var every = Math.ceil(pts.length / Math.max(2, Math.floor((W - pl - pr) / 70)));
+  pts.forEach(function (o, i) {
+    var x = X(i), y = Y(o.v), last = i === pts.length - 1;
+    s += '<circle cx="' + x + '" cy="' + y + '" r="5.5" fill="#fff" stroke="' + (last ? '#de6f61' : '#2f8b85') + '" stroke-width="3"/>';
+    s += '<text x="' + x + '" y="' + (y - 11) + '" font-size="12" font-weight="700" fill="#24313a" text-anchor="middle">' + o.v + '</text>';
+    if (i % every === 0 || last) s += '<text x="' + x + '" y="' + (H - 12) + '" font-size="11" fill="#6b6862" text-anchor="middle">' + o.date.slice(5).replace('-', '/') + '</text>';
+  });
+  box.innerHTML = s + '</svg>';
+  note.textContent = pts.length < 2 ? '目前只有 1 筆紀錄；新增追蹤評估後才會形成趨勢。' : '每一點都是實際輸入的評估（共 ' + pts.length + ' 筆），橫軸依日期間隔排列。';
+}
+
+/* ---------- clinical ---------- */
+function suggHTML(p, r) {
+  if (!r.sugg.length) return '';
+  return '<h3>處置建議</h3><div class="stack">' + r.sugg.map(function (s) {
+    return '<div class="item sugg"><div><span style="color:var(--ink)">' + E(s.text) + '</span>' + (s.src ? '<span class="src">' + E(s.src) + '</span>' : '') + '</div>' +
+      (s.task ? '<button class="btn small" data-addtask="' + E(s.task) + '" data-pid="' + E(p.id) + '" data-text="' + E(s.text) + '">加入追蹤</button>' : '') + '</div>';
+  }).join('') + '</div>';
+}
+function renderClinical() {
+  var p = getP(active), box = $('#clinResult');
+  if (!p || !NB.latest(p)) { box.innerHTML = '<div class="empty">尚無評估資料。請先到「02 評估建檔」建立。</div>'; return; }
+  var a = NB.latest(p), r = NB.evaluate(a, p), m = r.mna, g = r.glim, ic = r.icope;
+  var yn = function (b) { return b === true ? '是' : b === false ? '否' : '未填'; };
+  var mnaRows = ['A', 'B', 'C', 'D', 'E', 'F'].map(function (k) {
+    var src = m.src[k] === 'auto' ? ' <span class="tag auto">自動</span>' : m.src[k] ? ' <span class="tag auto">' + m.src[k] + '</span>' : '';
+    return '<tr><td>' + k + '</td><td>' + NB.MNA_LABEL[k] + src + '</td><td>' + (m.items[k] === null ? '<span class="overdue">未填</span>' : m.items[k]) + '</td></tr>';
+  }).join('');
+  var tg = r.targets;
+  var hist = NB.sorted(p).slice().reverse().map(function (x) {
+    var rr = NB.evaluate(x, p);
+    return '<tr><td>' + E(x.date) + (x.legacy ? ' <span class="tag legacy">舊版</span>' : '') + '</td><td>' + v(rr.d.weight) + '</td><td>' + v(rr.d.bmi) + '</td><td>' + v(rr.mna.score) + '</td><td>' + (rr.glim.dx === true ? '第 ' + rr.glim.stage + ' 級' : rr.glim.dx === false ? '未符合' : '—') + '</td><td>' + v(x.intakePct, '%') + '</td><td>' + v(x.albumin) + '</td><td><span class="badge ' + rr.tier + '" style="min-width:0;padding:2px 8px">' + TIER[rr.tier] + '</span></td><td>' + E(x.enteredBy || '') + '</td><td>' + (x.note ? E(x.note) : '') + '</td><td><button class="danger small" data-delassess="' + E(x.id) + '" data-confirmed="false">刪除</button></td></tr>';
+  }).join('');
+  box.innerHTML =
+    '<div class="head"><div><p class="eyebrow">' + E(p.id) + ' · ' + E(p.setting) + ' · ' + E(a.date) + '</p><h2>' + nameTags(p) + '</h2></div><span class="badge ' + r.tier + '">' + TIER[r.tier] + '</span></div>' +
+    '<div class="item" style="margin-bottom:12px"><strong>' + E(r.summary) + '</strong></div>' +
+    '<div class="grid twocol">' +
+      '<div class="stack">' +
+        '<div class="item"><strong>ICOPE 營養初篩：' + (ic.nutri === true ? '陽性' : ic.nutri === false ? '陰性' : '未完成') + '</strong><span>① 3 個月體重減輕 &gt;3 kg：' + yn(ic.q1) + (ic.q1auto ? '（依體重自動判定）' : '') + '<br>② 食慾不好：' + yn(ic.q2) + (a.icopeNutriFlag ? '<br>舊版勾選「營養狀況」異常' : '') + '<br>其他面向異常：' + (ic.others.length ? E(ic.others.join('、')) : '無') + '</span></div>' +
+        '<div class="item"><strong>MNA-SF：' + (m.score !== null ? m.score + ' / 14' : '未完成') + '</strong><div class="tblwrap"><table class="tbl"><thead><tr><th>項目</th><th>內容</th><th>分數</th></tr></thead><tbody>' + mnaRows + '</tbody></table></div></div>' +
+      '</div>' +
+      '<div class="stack">' +
+        '<div class="item"><strong>GLIM：' + (g.dx === true ? '營養不良第 ' + g.stage + ' 級（' + (g.stage === 2 ? '嚴重' : '中度') + '）' : g.dx === false ? '未符合診斷' : '資料不足') + '</strong><span>表現型：' + (g.phen.length ? E(g.phen.join('；')) : '無') + (g.phenUnknown.length ? '（未知：' + g.phenUnknown.join('、') + '）' : '') + (g.muscleMeasured ? '' : '；肌肉量未測量') + '<br>病因型：' + (g.etio.length ? E(g.etio.join('；')) : '無') + (g.etioUnknown.length ? '（未填：' + g.etioUnknown.join('、') + '）' : '') + '</span></div>' +
+        '<div class="item"><strong>每日營養目標（參考值）</strong><span>' + (tg ? '熱量約 ' + tg.kcal + ' kcal（30 kcal/kg）；蛋白質 ≥ ' + tg.protein + ' g（1.0 g/kg）' + (tg.obese ? '<br>BMI ≥30：以目前體重計算可能高估，請個別調整。' : '') : '需輸入目前體重') + '</span><span class="src">ESPEN 2019，依營養狀態、活動、疾病與耐受度調整</span></div>' +
+        '<div class="item"><strong>檢驗</strong><span>白蛋白 ' + v(a.albumin, ' g/dL') + '；CRP ' + v(a.crp, ' mg/dL') + '（僅記錄，不納入分級）</span></div>' +
+      '</div>' +
+    '</div>' +
+    '<div style="margin-top:14px">' + suggHTML(p, r) + '</div>' +
+    '<h3 style="margin-top:16px">評估紀錄</h3><div class="tblwrap"><table class="tbl"><thead><tr><th>日期</th><th>體重</th><th>BMI</th><th>MNA-SF</th><th>GLIM</th><th>攝食</th><th>白蛋白</th><th>分級</th><th>填報者</th><th>備註</th><th></th></tr></thead><tbody>' + hist + '</tbody></table></div>';
+}
+
+/* ---------- tasks ---------- */
+function renderTasks() {
+  var showDone = $('#showDone').checked, today = todayStr(), list = [];
+  S.patients.forEach(function (p) { p.tasks.forEach(function (t) { if (showDone || !t.done) list.push({ p: p, t: t }); }); });
+  list.sort(function (x, y) { return (x.t.done - y.t.done) || ((x.t.due || '9') < (y.t.due || '9') ? -1 : 1); });
+  $('#taskList').innerHTML = list.length ? list.map(function (x) {
+    var od = !x.t.done && x.t.due && x.t.due < today;
+    return '<div class="item task' + (x.t.done ? ' done' : '') + '"><input type="checkbox" aria-label="完成" data-taskdone="' + E(x.t.id) + '" data-pid="' + E(x.p.id) + '"' + (x.t.done ? ' checked' : '') + '><div><strong>' + E(x.t.type) + '｜' + nameTags(x.p) + '</strong><span>' + E(x.t.note || '') + '</span><span class="src ' + (od ? 'overdue' : '') + '">期限 ' + E(x.t.due || '未定') + (od ? '（已逾期）' : '') + '</span></div><button class="btn small" data-deltask="' + E(x.t.id) + '" data-pid="' + E(x.p.id) + '" aria-label="刪除任務">✕</button></div>';
+  }).join('') : '<div class="empty">目前沒有' + (showDone ? '' : '未完成的') + '追蹤任務。可從處置建議按「加入追蹤」，或在上方手動新增。</div>';
+}
+function prefillTask(pid, type, text) {
+  show('clinical');
+  $('#taskPatient').value = pid; $('#taskType').value = type; $('#taskNote').value = text.length > 200 ? text.slice(0, 200) : text;
+  if (!$('#taskDue').value) $('#taskDue').value = addDays(todayStr(), 7);
+  $('#taskPanel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  $('#taskDue').focus();
+}
+
+/* ---------- messages ---------- */
+function renderMessages() {
+  $('#msgList').innerHTML = S.messages.length ? S.messages.map(function (m) {
+    var p = m.pid ? getP(m.pid) : null;
+    return '<div class="item"><strong class="row">' + E(m.role) + (p ? '｜' + E(p.name) : '') + '<span>' + fmtTime(m.t) + '</span></strong><p>' + E(m.text) + '</p></div>';
+  }).join('') : '<div class="empty">尚無團隊訊息。</div>';
+}
+
+/* ---------- community ---------- */
+function renderCommunity() {
+  var R = rows().filter(function (x) { return x.p.setting !== '住院' && (tierOfRow(x) === 'mal' || tierOfRow(x) === 'risk'); });
+  $('#communityList').innerHTML = R.length ? '<div class="tblwrap"><table class="tbl"><thead><tr><th>個案</th><th>場域</th><th>分級</th><th>最近評估</th><th>判讀</th><th>未完成任務</th><th></th></tr></thead><tbody>' + R.map(function (x) {
+    var ot = openTasks(x.p).sort(function (a, b) { return (a.due || '9') < (b.due || '9') ? -1 : 1; });
+    return '<tr><td>' + nameTags(x.p) + '</td><td>' + E(x.p.setting) + '</td><td><span class="badge ' + tierOfRow(x) + '" style="min-width:0;padding:2px 8px">' + TIER[tierOfRow(x)] + '</span></td><td>' + E(x.a.date) + '</td><td>' + E(x.r.summary) + '</td><td>' + (ot.length ? ot.length + ' 項，最近 ' + E(ot[0].due || '未定') : '<span class="overdue">無</span>') + '</td><td><button class="btn small" data-reassess="' + E(x.p.id) + '">回寫訪視評估</button></td></tr>';
+  }).join('') + '</tbody></table></div>' : '<div class="empty">目前沒有需要追蹤的社區或居家個案。</div>';
+}
+
+/* ---------- selects ---------- */
+function fillSelect(sel, withNew, emptyLabel) {
+  var cur = sel.value;
+  var opts = (withNew ? '<option value="new">＋ 新個案</option>' : '') + (emptyLabel ? '<option value="">' + emptyLabel + '</option>' : '') +
+    S.patients.map(function (p) { return '<option value="' + E(p.id) + '">' + E(p.name) + '（' + E(p.id) + '）' + (p.demo ? '［示例］' : '') + '</option>'; }).join('');
+  sel.innerHTML = opts;
+  if ([].some.call(sel.options, function (o) { return o.value === cur; })) sel.value = cur;
+}
+function fillSelects() {
+  fillSelect($('#formTarget'), true);
+  fillSelect($('#taskPatient'), false);
+  fillSelect($('#msgPatient'), false, '（不指定）');
+  fillSelect($('#clinPatient'), false);
+  if (active) { $('#clinPatient').value = active; if (!$('#taskPatient').value) $('#taskPatient').value = active; }
+}
+
+function renderAll() { renderMetrics(); renderList(); renderDetail(); drawTrend(); fillSelects(); renderClinical(); renderTasks(); renderMessages(); renderCommunity(); }
+function setFilter(t) { filter = t; $$('.chip').forEach(function (c) { c.classList.toggle('active', c.dataset.tier === t); }); }
+
+/* ---------- navigation ---------- */
+function show(id) {
+  $$('.view').forEach(function (s) { s.classList.toggle('active', s.id === id); });
+  $$('.tab').forEach(function (t) { var on = t.dataset.view === id; t.classList.toggle('active', on); if (on) t.setAttribute('aria-current', 'page'); else t.removeAttribute('aria-current'); });
+  if (id === 'overview') drawTrend();
+  window.scrollTo({ top: 0 });
+}
+
+/* ---------- form ---------- */
+function collect() {
+  var f = new FormData(F), g = function (k) { return f.get(k); }, n = function (k) { return NB.num(g(k)); };
+  return {
+    pt: { name: String(g('name') || '').trim(), sex: g('sex'), age: n('age'), setting: g('setting') },
+    a: {
+      date: g('date'), enteredBy: g('enteredBy'), height: n('height'), weight: n('weight'), wt3m: n('wt3m'), wt6m: n('wt6m'), calf: n('calf'),
+      icopeWt: g('icopeWt') || '', icopeApp: g('icopeApp') || '', icopeDomains: f.getAll('icopeDomain'),
+      mnaA: n('mnaA'), mnaB: n('mnaB'), mnaC: n('mnaC'), mnaD: n('mnaD'), mnaE: n('mnaE'),
+      glimMuscle: g('glimMuscle') || 'nm', intakePct: n('intakePct'), intakeDur: g('intakeDur') || '', glimGI: g('glimGI') === 'on', glimInfl: g('glimInfl') || '',
+      swallow: g('swallow') === 'true', albumin: n('albumin'), crp: n('crp'), note: String(g('note') || '').trim()
+    }
+  };
+}
+function preview() {
+  var c = collect(), r = NB.evaluate(c.a, c.pt), d = r.d, m = r.mna, g = r.glim, ic = r.icope;
+  // ICOPE question 1 and MNA-SF item B follow the weights when both are entered.
+  var auto = d.loss3 !== null;
+  $$('input[name="icopeWt"]').forEach(function (i) {
+    if (auto) { i.disabled = true; i.checked = i.value === (d.loss3 > 3 ? 'yes' : 'no'); i.dataset.auto = '1'; }
+    else { if (i.dataset.auto) { i.checked = false; delete i.dataset.auto; } i.disabled = false; }
+  });
+  $('#q1auto').hidden = !auto;
+  var b = fe('mnaB');
+  if (auto) { b.value = String(m.items.B); b.disabled = true; b.dataset.auto = '1'; }
+  else { if (b.dataset.auto) { b.value = ''; delete b.dataset.auto; } b.disabled = false; }
+  $('#bauto').hidden = !auto;
+
+  var parts = [];
+  parts.push('BMI ' + v(d.bmi));
+  if (d.loss3 !== null) parts.push('3 個月 ' + (d.loss3 >= 0 ? '減輕 ' + d.loss3 : '增加 ' + (-d.loss3)) + ' kg（' + Math.abs(d.pct3) + '%）');
+  if (d.pct6 !== null) parts.push('6 個月 ' + (d.pct6 >= 0 ? '減輕 ' : '增加 ') + Math.abs(d.pct6) + '%');
+  $('#anthroOut').textContent = parts.join(' · ');
+  $('#icopeOut').textContent = '營養初篩：' + (ic.nutri === true ? '陽性 → 進行 MNA-SF' : ic.nutri === false ? '陰性' : '未完成') + '　·　ICOPE 異常共 ' + ic.count + ' 項';
+  $('#mnaFOut').textContent = m.src.F === 'F1' ? 'F1：BMI ' + d.bmi + ' → ' + m.items.F + ' 分' : m.src.F === 'F2' ? 'F2：小腿圍 ' + d.calf + ' cm → ' + m.items.F + ' 分' : '需輸入身高＋體重，或小腿圍';
+  $('#mnaOut').textContent = m.score !== null ? 'MNA-SF ' + m.score + ' / 14：' + { normal: '營養狀態正常', risk: '有營養不良風險', mal: '營養不良' }[m.band] : '尚缺：' + m.missing.map(function (k) { return k + ' ' + NB.MNA_LABEL[k]; }).join('、');
+
+  var tg = r.targets;
+  $('#live').innerHTML =
+    '<div><span class="badge ' + r.tier + '">' + TIER[r.tier] + '</span></div>' +
+    '<div class="item"><strong>' + E(r.summary) + '</strong></div>' +
+    '<div class="item"><strong>GLIM：' + (g.dx === true ? '第 ' + g.stage + ' 級' : g.dx === false ? '未符合' : '資料不足') + '</strong><span>表現型：' + (g.phen.length ? E(g.phen.join('；')) : '無') + '<br>病因型：' + (g.etio.length ? E(g.etio.join('；')) : '無') + '</span></div>' +
+    (tg ? '<div class="item"><strong>每日目標（參考）</strong><span>' + tg.kcal + ' kcal · 蛋白質 ≥' + tg.protein + ' g</span></div>' : '') +
+    (r.flags.swallow ? '<div class="item"><strong>吞嚥警訊</strong><span>建議安排吞嚥評估</span></div>' : '');
+}
+function resetForm(keepTarget) {
+  var tv = $('#formTarget').value;
+  F.reset();
+  fe('date').value = todayStr();
+  $('#formTarget').value = keepTarget && getP(tv) ? tv : 'new';
+  $$('#aForm [data-auto]').forEach(function (i) { delete i.dataset.auto; });
+  loadTarget();
+  preview();
+}
+function loadTarget() {
+  var p = getP($('#formTarget').value), hint = $('#lastHint');
+  if (!p) { hint.textContent = ''; return; }
+  fe('name').value = p.name; fe('sex').value = p.sex; fe('age').value = p.age === null ? '' : p.age; fe('setting').value = p.setting;
+  var last = NB.latest(p);
+  if (last) {
+    if (last.height) fe('height').value = last.height;
+    var days = Math.round((new Date(todayStr()) - new Date(last.date)) / 864e5);
+    hint.textContent = '上次評估 ' + last.date + (isFinite(days) ? '（' + days + ' 天前）' : '') + '：體重 ' + v(last.weight, ' kg') + '。3 個月前／6 個月前體重請依紀錄填寫。';
+  } else hint.textContent = '';
+}
+function reassess(pid) {
+  show('intake');
+  $('#formTarget').value = pid;
+  resetForm(true);
+  fe('weight').focus();
+}
+F.addEventListener('input', preview);
+F.addEventListener('change', function (e) { if (e.target.id === 'formTarget') { resetForm(true); } else preview(); });
+$('#formReset').addEventListener('click', function () { resetForm(false); });
+F.addEventListener('submit', function (e) {
+  e.preventDefault();
+  if (!F.reportValidity()) return;
+  var c = collect();
+  if (!c.pt.name) { toast('請輸入個案代號。'); fe('name').focus(); return; }
+  var target = $('#formTarget').value, p = getP(target);
+  if (!p) {
+    var prefix = c.pt.setting === '社區' ? 'C' : c.pt.setting === '居家' ? 'H' : 'P';
+    p = NB.normalizePatient({ id: NB.nextId(S.patients, prefix), name: c.pt.name, sex: c.pt.sex, age: c.pt.age, setting: c.pt.setting, created: new Date().toISOString(), assessments: [], tasks: [] });
+    S.patients.unshift(p);
+  } else { p.name = c.pt.name; p.sex = c.pt.sex; p.age = c.pt.age; p.setting = c.pt.setting; }
+  c.a.id = uid('a'); c.a.created = new Date().toISOString();
+  p.assessments.push(c.a);
+  active = p.id; setFilter('all'); save();
+  var r = NB.evaluate(NB.latest(p), p);
+  renderAll(); resetForm(false); show('overview');
+  toast(p.name + ' 的評估已儲存：' + TIER[r.tier] + '。');
+});
+
+/* ---------- meal record ---------- */
+var meals = { breakfast: ['豆漿、地瓜、蒸蛋', 430, 24, 51, 17, '蛋白質足夠，建議補一份軟質蔬果。'], lunch: ['外食便當半份', 610, 27, 78, 22, '鈉與精緻澱粉偏高，蔬菜份量不足。'], dinner: ['軟質粥品與魚肉', 520, 31, 60, 14, '適合吞嚥疑慮個案，仍需確認液體稠度。'] };
+function meal(key) {
+  var m = meals[key];
+  $('#nutrientBars').innerHTML = '<div class="item"><strong>示範結果：' + m[0] + '</strong><span>' + m[1] + ' kcal · ' + m[5] + '</span></div>' +
+    [['蛋白質', m[2], 'g', 40], ['醣類', m[3], 'g', 100], ['脂肪', m[4], 'g', 40]].map(function (x) { return '<div class="bar"><div><span>' + x[0] + '</span><strong>' + x[1] + x[2] + '</strong></div><div class="track"><div class="fill" style="width:' + Math.min(100, x[1] / x[3] * 100) + '%"></div></div></div>'; }).join('');
+}
+$$('[data-plate]').forEach(function (s) { s.innerHTML = '<option value="">未填</option>' + [0, 25, 50, 75, 100].map(function (n) { return '<option value="' + n + '">' + (n === 0 ? '沒吃' : n === 100 ? '全部吃完' : '約 ' + n / 10 + ' 成') + '（' + n + '%）</option>'; }).join(''); });
+function plateAvg() { var vs = $$('[data-plate]').map(function (s) { return NB.num(s.value); }).filter(function (x) { return x !== null; }); return vs.length ? { avg: Math.round(vs.reduce(function (a, b) { return a + b; }, 0) / vs.length), n: vs.length } : null; }
+$$('[data-plate]').forEach(function (s) { s.addEventListener('change', function () { var r = plateAvg(); $('#plateOut').textContent = r ? '平均攝食約 ' + r.avg + '%（' + r.n + ' 餐）' : '尚未填寫'; }); });
+$('#plateToForm').addEventListener('click', function () {
+  var r = plateAvg(); if (!r) { toast('請先填寫至少一餐。'); return; }
+  show('intake'); fe('intakePct').value = r.avg; preview(); fe('intakeDur').focus();
+  toast('已帶入攝食量 ' + r.avg + '%，請選擇持續時間。');
+});
+$$('[data-meal]').forEach(function (b) { b.addEventListener('click', function () { $$('[data-meal]').forEach(function (x) { x.classList.toggle('active', x === b); }); meal(b.dataset.meal); }); });
+$('#mealUpload').addEventListener('change', function (e) {
+  var f = e.target.files[0]; if (!f) return;
+  var img = new Image(); img.alt = '上傳的餐食照片'; img.src = URL.createObjectURL(f); img.onload = function () { URL.revokeObjectURL(img.src); };
+  $('#mealPreview').innerHTML = ''; $('#mealPreview').appendChild(img);
+  toast('照片已在本機預覽；影像辨識尚未串接，未進行分析。');
+});
+
+/* ---------- events ---------- */
+$$('.tab').forEach(function (b) { b.addEventListener('click', function () { show(b.dataset.view); }); });
+$$('.chip').forEach(function (b) { b.addEventListener('click', function () { setFilter(b.dataset.tier); renderList(); renderDetail(); drawTrend(); }); });
+$('#caseList').addEventListener('click', function (e) { var b = e.target.closest('.casebtn'); if (!b) return; active = b.dataset.id; renderList(); renderDetail(); drawTrend(); fillSelects(); renderClinical(); });
+$('#trendMode').addEventListener('change', drawTrend);
+$('#clinPatient').addEventListener('change', function (e) { active = e.target.value; setFilter('all'); renderAll(); });
+$('#showDone').addEventListener('change', renderTasks);
+
+function twoClick(btn, label, msg, fn) {
+  if (btn.dataset.confirmed !== 'true') {
+    btn.dataset.confirmed = 'true'; btn.textContent = '再按一次確認'; toast(msg);
+    setTimeout(function () { if (btn.isConnected) { btn.dataset.confirmed = 'false'; btn.textContent = label; } }, 3500);
+    return;
+  }
+  fn();
+}
+document.addEventListener('click', function (e) {
+  var t = e.target.closest('button'); if (!t) return;
+  if (t.dataset.act === 'reassess') reassess(active);
+  else if (t.dataset.act === 'toClinical') { show('clinical'); }
+  else if (t.dataset.act === 'delPatient') {
+    var p = getP(active); if (!p) return;
+    twoClick(t, '刪除個案', '再按一次將刪除 ' + p.name + ' 的全部評估與任務。', function () {
+      S.patients = S.patients.filter(function (x) { return x.id !== p.id; });
+      S.messages = S.messages.filter(function (m) { return m.pid !== p.id; });
+      active = S.patients[0] ? S.patients[0].id : ''; save(); renderAll(); toast(p.name + ' 已刪除。');
+    });
+  }
+  else if (t.dataset.delassess) {
+    var pp = getP(active); if (!pp) return;
+    twoClick(t, '刪除', '再按一次刪除這筆評估。', function () {
+      pp.assessments = pp.assessments.filter(function (a) { return a.id !== t.dataset.delassess; });
+      save(); renderAll(); toast('已刪除該次評估。');
+    });
+  }
+  else if (t.dataset.addtask) prefillTask(t.dataset.pid, t.dataset.addtask, t.dataset.text || '');
+  else if (t.dataset.deltask) { var p2 = getP(t.dataset.pid); if (!p2) return; p2.tasks = p2.tasks.filter(function (x) { return x.id !== t.dataset.deltask; }); save(); renderAll(); }
+  else if (t.dataset.reassess) { active = t.dataset.reassess; reassess(t.dataset.reassess); }
+});
+document.addEventListener('change', function (e) {
+  var c = e.target; if (!c.dataset || !c.dataset.taskdone) return;
+  var p = getP(c.dataset.pid); if (!p) return;
+  p.tasks.forEach(function (t) { if (t.id === c.dataset.taskdone) { t.done = c.checked; t.doneAt = c.checked ? new Date().toISOString() : null; } });
+  save(); renderAll();
+});
+$('#addTaskBtn').addEventListener('click', function () {
+  var p = getP($('#taskPatient').value);
+  if (!p) { toast('請先建立個案。'); return; }
+  var note = $('#taskNote').value.trim();
+  p.tasks.push({ id: uid('t'), type: $('#taskType').value, due: $('#taskDue').value || '', note: note, done: false, created: new Date().toISOString() });
+  save(); $('#taskNote').value = ''; $('#taskDue').value = addDays(todayStr(), 7); renderAll(); toast('已新增 ' + p.name + ' 的追蹤任務。');
+});
+$('#addMsgBtn').addEventListener('click', function () {
+  var text = $('#msgText').value.trim(); if (!text) { toast('請輸入訊息內容。'); $('#msgText').focus(); return; }
+  S.messages.unshift({ id: uid('m'), t: new Date().toISOString(), role: $('#msgRole').value, pid: $('#msgPatient').value || '', text: text });
+  save(); $('#msgText').value = ''; renderMessages(); toast('訊息已新增。');
+});
+
+/* ---------- report / backup ---------- */
+function download(content, name, type) {
+  var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([content], { type: type })); a.download = name;
+  document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+}
+function reportRows() {
+  return rows().map(function (x) {
+    var r = x.r, d = r ? r.d : {}, ot = openTasks(x.p);
+    return [x.p.id, x.p.name + (x.p.demo ? '（示例）' : ''), x.p.sex, x.p.age, x.p.setting, x.a ? x.a.date : '', d.weight, d.bmi, d.loss3, d.pct6,
+      r ? (r.icope.nutri === true ? '陽性' : r.icope.nutri === false ? '陰性' : '') : '', r ? r.icope.count : '', r ? r.mna.score : '',
+      r ? (r.glim.dx === true ? '第' + r.glim.stage + '級' : r.glim.dx === false ? '未符合' : '') : '', TIER[tierOfRow(x)],
+      x.a ? x.a.intakePct : '', x.a ? (x.a.swallow ? '是' : '否') : '', ot.length, ot.map(function (t) { return t.type + (t.due ? '@' + t.due : ''); }).join('；')];
+  });
+}
+var REPORT_HEAD = ['代號', '個案', '性別', '年齡', '場域', '最近評估', '體重kg', 'BMI', '3月減輕kg', '6月減輕%', 'ICOPE營養初篩', 'ICOPE異常項', 'MNA-SF', 'GLIM', '分級', '攝食%', '吞嚥疑慮', '未完成任務', '任務明細'];
+function exportCsv() {
+  if (!S.patients.length) { toast('目前沒有個案可匯出。'); return; }
+  download('﻿' + NB.toCSV([REPORT_HEAD].concat(reportRows())), '營養週報_' + todayStr() + '.csv', 'text/csv;charset=utf-8');
+  toast('已下載週報 CSV（' + S.patients.length + ' 位個案）。');
+}
+function buildPrint() {
+  var t = todayStr(), from = addDays(t, -7), to = addDays(t, 7), R = rows();
+  var due = []; S.patients.forEach(function (p) { openTasks(p).forEach(function (k) { if (k.due && k.due <= to) due.push([p, k]); }); });
+  due.sort(function (a, b) { return a[1].due < b[1].due ? -1 : 1; });
+  var msgs = S.messages.filter(function (m) { return m.t && m.t.slice(0, 10) >= from; });
+  $('#printArea').innerHTML = '<h2>營養照護週報</h2><p>產生日期 ' + t + '；個案 ' + R.length + ' 位（營養不良 ' + R.filter(function (x) { return tierOfRow(x) === 'mal'; }).length + '、有風險 ' + R.filter(function (x) { return tierOfRow(x) === 'risk'; }).length + '）</p>' +
+    '<h3>個案狀態</h3><table><thead><tr>' + ['代號', '個案', '場域', '最近評估', 'MNA-SF', 'GLIM', '分級', '未完成任務'].map(function (h) { return '<th>' + h + '</th>'; }).join('') + '</tr></thead><tbody>' +
+    reportRows().map(function (r) { return '<tr>' + [r[0], r[1], r[4], r[5], r[12], r[13], r[14], r[17]].map(function (c) { return '<td>' + E(c === null || c === undefined ? '' : c) + '</td>'; }).join('') + '</tr>'; }).join('') + '</tbody></table>' +
+    '<h3>7 天內到期與逾期任務</h3>' + (due.length ? '<table><thead><tr><th>期限</th><th>個案</th><th>類別</th><th>內容</th></tr></thead><tbody>' + due.map(function (x) { return '<tr><td>' + E(x[1].due) + (x[1].due < t ? '（逾期）' : '') + '</td><td>' + E(x[0].name) + '</td><td>' + E(x[1].type) + '</td><td>' + E(x[1].note) + '</td></tr>'; }).join('') + '</tbody></table>' : '<p>無</p>') +
+    '<h3>近 7 天團隊訊息</h3>' + (msgs.length ? '<ul>' + msgs.map(function (m) { return '<li>' + fmtTime(m.t) + ' ' + E(m.role) + '：' + E(m.text) + '</li>'; }).join('') + '</ul>' : '<p>無</p>') +
+    '<p style="font-size:9pt">本報表由互動原型產生，分級規則未經驗證，需由醫療人員確認。</p>';
+}
+function printReport() { if (!S.patients.length) { toast('目前沒有個案可列印。'); return; } buildPrint(); window.print(); }
+window.addEventListener('beforeprint', buildPrint);
+$('#exportCsv').addEventListener('click', exportCsv); $('#exportCsvTop').addEventListener('click', exportCsv);
+$('#printReport').addEventListener('click', printReport); $('#printTop').addEventListener('click', printReport);
+$('#exportJson').addEventListener('click', function () {
+  download(JSON.stringify({ app: 'ai-nutrition', version: 4, exported: new Date().toISOString(), data: S }, null, 2), '營養平台備份_' + todayStr() + '.json', 'application/json');
+  toast('已下載備份檔，內含個案資料，請妥善保管。');
+});
+$('#importJson').addEventListener('change', function (e) {
+  var f = e.target.files[0]; e.target.value = ''; if (!f) return;
+  var rd = new FileReader();
+  rd.onload = function () {
+    var o; try { o = JSON.parse(rd.result); } catch (err) { toast('檔案不是有效的 JSON。'); return; }
+    var data = o && o.data && Array.isArray(o.data.patients) ? o.data : null;
+    if (!data) { toast('不是本平台的備份檔。'); return; }
+    if (!window.confirm('以備份檔（' + data.patients.length + ' 位個案）取代目前的 ' + S.patients.length + ' 位個案？')) return;
+    S = { patients: data.patients.map(NB.normalizePatient), messages: Array.isArray(data.messages) ? data.messages : [] };
+    active = S.patients[0] ? S.patients[0].id : ''; setFilter('all'); save(); renderAll(); toast('已匯入 ' + S.patients.length + ' 位個案。');
+  };
+  rd.readAsText(f);
+});
+$('#clearAll').addEventListener('click', function (e) {
+  twoClick(e.currentTarget, '清除本機全部資料', '再按一次將清除此瀏覽器中的全部個案、任務與訊息（含舊版資料）。', function () {
+    S = { patients: [], messages: [] }; active = '';
+    OLD_KEYS.forEach(store.del); save(); renderAll(); resetForm(false);
+    e.currentTarget.dataset.confirmed = 'false'; e.currentTarget.textContent = '清除本機全部資料';
+    toast('本機資料已清除。');
+  });
+});
+$('#loadDemo').addEventListener('click', function () {
+  var ex = S.patients.filter(function (p) { return p.demo; })[0];
+  if (ex) { active = ex.id; setFilter('all'); renderAll(); show('overview'); toast('示例個案已存在。'); return; }
+  var t = todayStr(), base = { height: 152, calf: null, icopeDomains: ['行動能力'], glimMuscle: 'nm', glimGI: false, enteredBy: '營養師' };
+  var mk = function (o) { var a = {}; for (var k in base) a[k] = base[k]; for (var k2 in o) a[k2] = o[k2]; a.id = uid('a'); a.created = new Date().toISOString(); return a; };
+  var p = NB.normalizePatient({
+    id: NB.nextId(S.patients, 'H'), name: '示例 A 奶奶', sex: '女', age: 82, setting: '居家', demo: true, created: new Date().toISOString(),
+    assessments: [
+      mk({ date: addDays(t, -84), weight: 49.0, wt3m: 50.5, icopeApp: 'yes', mnaA: 1, mnaC: 2, mnaD: 2, mnaE: 2, intakePct: 70, intakeDur: 'gt2w', glimInfl: 'none', swallow: false, albumin: 3.6, note: '示例：居家訪視初評' }),
+      mk({ date: addDays(t, -42), weight: 46.5, wt3m: 49.5, icopeApp: 'yes', mnaA: 1, mnaC: 1, mnaD: 0, mnaE: 2, intakePct: 50, intakeDur: '1to2w', glimInfl: 'acute', swallow: true, albumin: 3.1, crp: 4.2, note: '示例：肺炎住院後，進食易嗆咳' }),
+      mk({ date: t, weight: 47.8, wt3m: 49.0, wt6m: 50.5, icopeApp: 'no', mnaA: 2, mnaC: 2, mnaD: 2, mnaE: 2, intakePct: 100, intakeDur: '', glimInfl: 'none', swallow: false, albumin: 3.5, note: '示例：ONS 與質地調整後回升' })
+    ],
+    tasks: [
+      { id: uid('t'), type: '吞嚥評估', due: addDays(t, -35), note: '示例：語言治療師床邊吞嚥評估', done: true, created: new Date().toISOString() },
+      { id: uid('t'), type: '再評估', due: addDays(t, 28), note: '示例：一個月後追蹤體重與攝食', done: false, created: new Date().toISOString() }
+    ]
+  });
+  S.patients.unshift(p); active = p.id; setFilter('all'); save(); renderAll(); show('overview');
+  toast('已載入示例個案（標示「示例」，可隨時刪除）。');
+});
+
+var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(drawTrend, 120); });
+
+load(); meal('breakfast'); $('#taskDue').value = addDays(todayStr(), 7); renderAll(); resetForm(false);
+})();
+</script>
+</body>
+</html>
